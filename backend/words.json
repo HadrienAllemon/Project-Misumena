@@ -1,0 +1,1135 @@
+{
+    "words": [
+        {
+            "names": [
+                "CEO",
+                "Intern"
+            ],
+            "accept": {
+                "CEO": [
+                    "director"
+                ],
+                "Intern": [
+                    "trainee",
+                    "probationer"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Shark",
+                "Dolphin",
+                "Whale"
+            ],
+            "accept": {
+                "Shark": [],
+                "Dolphin": [],
+                "Whale": []
+            }
+        },
+        {
+            "names": [
+                "Plane",
+                "Helicopter"
+            ],
+            "accept": {
+                "Plane": [
+                    "aircraft",
+                    "airplane"
+                ],
+                "Helicopter": [
+                    "chopper"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Marvel (comics)",
+                "DC (comics)"
+            ],
+            "accept": {
+                "Marvel (comics)": [
+                    "marvel",
+                    "marvel comics"
+                ],
+                "DC (comics)": [
+                    "dc comics",
+                    "dc"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Dracula",
+                "Edward Cullen (Twighlight)"
+            ],
+            "accept": {
+                "Dracula": [
+                    "count dracula"
+                ],
+                "Edward Cullen (Twighlight)": [
+                    "edward",
+                    "edward cullen"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Queen (rock band)",
+                "Rolling Stones",
+                "The Beatles"
+            ],
+            "accept": {
+                "Queen (rock band)": [
+                    "queen"
+                ],
+                "Rolling Stones": [
+                    "stones"
+                ],
+                "The Beatles": [
+                    "beetles"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Freddie Mercury",
+                "John Lennon"
+            ],
+            "accept": {
+                "Freddie Mercury": [
+                    "freddy mercury",
+                    "freddie mercurie",
+                    "farrokh bulsara"
+                ],
+                "John Lennon": []
+            }
+        },
+        {
+            "names": [
+                "Big Ben",
+                "The Bells of Notre-Dame de Paris"
+            ],
+            "accept": {
+                "Big Ben": [
+                    "queen elizabeth tower"
+                ],
+                "The Bells of Notre-Dame de Paris": [
+                    "notre dame",
+                    "notre dame bells tower",
+                    "notre dame de paris",
+                    "notre dame de paris bells tower"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Slam Dunk",
+                "Kuroko no Basket"
+            ],
+            "accept": {
+                "Slam Dunk": [],
+                "Kuroko no Basket": [
+                    "kuroko",
+                    "kuroko's basketball"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Tree",
+                "Flower"
+            ],
+            "accept": {
+                "Tree": [],
+                "Flower": []
+            }
+        },
+        {
+            "names": [
+                "Beauticien",
+                "Hairdresser"
+            ],
+            "accept": {
+                "Beauticien": [],
+                "Hairdresser": [
+                    "barber"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Castle",
+                "Manor"
+            ],
+            "accept": {
+                "Castle": [
+                    "fort"
+                ],
+                "Manor": [
+                    "mansion"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Pikachu",
+                "Charmender",
+                "Pichu"
+            ],
+            "accept": {
+                "Pikachu": [],
+                "Charmender": [],
+                "Pichu": []
+            }
+        },
+        {
+            "names": [
+                "Cup",
+                "Mug"
+            ],
+            "accept": {
+                "Cup": [],
+                "Mug": []
+            }
+        },
+        {
+            "names": [
+                "Berserk (Manga)",
+                "Dark Souls"
+            ],
+            "accept": {
+                "Berserk (Manga)": [
+                    "berserk"
+                ],
+                "Dark Souls": []
+            }
+        },
+        {
+            "names": [
+                "Chess",
+                "Checkers",
+                "GO (boardgame)"
+            ],
+            "accept": {
+                "Chess": [],
+                "Checkers": [],
+                "GO (boardgame)": [
+                    "go"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Hokuto no Ken",
+                "Jojo's Bizarre Adventures"
+            ],
+            "accept": {
+                "Hokuto no Ken": [
+                    "fist of the north star"
+                ],
+                "Jojo's Bizarre Adventures": [
+                    "jojo",
+                    "jojo bizarre adventures",
+                    "jojo's bizarre adventure"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Squid",
+                "Octopus"
+            ],
+            "accept": {
+                "Squid": [
+                    "calmar"
+                ],
+                "Octopus": []
+            }
+        },
+        {
+            "names": [
+                "Aragorn II Elessar",
+                "Boromir"
+            ],
+            "accept": {
+                "Aragorn II Elessar": [
+                    "aragorn"
+                ],
+                "Boromir": []
+            }
+        },
+        {
+            "names": [
+                "Gimli",
+                "Tyrion Lannister"
+            ],
+            "accept": {
+                "Gimli": [],
+                "Tyrion Lannister": [
+                    "tyrion"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Period (punctuation)",
+                "Comma (punctuation)"
+            ],
+            "accept": {
+                "Period": [
+                    "period"
+                ],
+                "Comma": [
+                    "comma"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Revolver",
+                "Assault Rifle",
+                "Sniper Rifle"
+            ],
+            "accept": {
+                "Revolver": [
+                    "handgun",
+                    "pistol",
+                    "gun",
+                    "six pistol"
+                ],
+                "Assault Rifle": [
+                    [
+                        "assault gun",
+                        "automatic rifle",
+                        "rifle",
+                        "machine rifle"
+                    ]
+                ]
+            }
+        },
+        {
+            "names": [
+                "Comics",
+                "Manga"
+            ],
+            "accept": {
+                "Comics": [
+                    "Comic"
+                ],
+                "Manga": []
+            }
+        },
+        {
+            "names": [
+                "Mushu (Mulan)",
+                "The Genie (Aladdin)"
+            ],
+            "accept": {
+                "Mushu (Mulan)": [
+                    "mushu"
+                ],
+                "The Genie (Aladdin)": [
+                    "genie",
+                    "aladdin's genie",
+                    "aladin's genie"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Batman",
+                "Iron Man"
+            ],
+            "accept": {
+                "Batman": [],
+                "The Genie (Aladdin)": []
+            }
+        },
+        {
+            "names": [
+                "Dr. House",
+                "Sherlock Holmes"
+            ],
+            "accept": {
+                "Dr. House": [
+                    "house",
+                    "doctor house",
+                    "house md"
+                ],
+                "Sherlock Holmes": [
+                    "holmes"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Boat",
+                "Submarine"
+            ],
+            "accept": {
+                "Boat": [
+                    ""
+                ],
+                "Submarine": [
+                    "sub"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Lion",
+                "Tiger"
+            ],
+            "accept": {
+                "Lion": [],
+                "Tiger": []
+            }
+        },
+        {
+            "names": [
+                "Car",
+                "Motorbike"
+            ],
+            "accept": {
+                "Car": [
+                    "auto",
+                    "automobile"
+                ],
+                "Motorbike": [
+                    "motorcycle",
+                    "hog",
+                    "bike"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Battle Royale (novel)",
+                "Hunger Games (novel)"
+            ],
+            "accept": {
+                "Battle Royale (novel)": [
+                    "battle royale"
+                ],
+                "Hunger Games (novel)": [
+                    "hunger games"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Star Wars",
+                "Star Trek"
+            ],
+            "accept": {
+                "Car": [
+                    "auto",
+                    "automobile"
+                ],
+                "Motorbike": [
+                    "motorcycle",
+                    "hog",
+                    "bike"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Star Wars",
+                "Star Trek"
+            ],
+            "accept": {
+                "Car": [
+                    "auto",
+                    "automobile"
+                ],
+                "Motorbike": [
+                    "motorcycle",
+                    "hog",
+                    "bike"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Tsunami",
+                "Waterspout"
+            ],
+            "accept": {
+                "Tsunami": [
+                    ""
+                ],
+                "Waterspout": [
+                    "cloudburst"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Call of Duty",
+                "Battlefield"
+            ],
+            "accept": {
+                "Call of Duty": [
+                    ""
+                ],
+                "Battlefield": [
+                    ""
+                ]
+            }
+        },
+        {
+            "names": [
+                "Cigarette",
+                "Tabacco Pipe"
+            ],
+            "accept": {
+                "Cigarette": [
+                    "fag",
+                    "cig"
+                ],
+                "Tabacco Pipe": [
+                    "pipe"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Apple",
+                "Banana"
+            ],
+            "accept": {
+                "Apple": [],
+                "Banana": []
+            }
+        },
+        {
+            "names": [
+                "Playstation",
+                "Nintendo Wii"
+            ],
+            "accept": {
+                "Playstation": [
+                    "ps"
+                ],
+                "Nintendo Wii": [
+                    "wii"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Hamburger",
+                "Burrito"
+            ],
+            "accept": {
+                "Hamburger": [],
+                "Burrito": []
+            }
+        },
+        {
+            "names": [
+                "Overwatch",
+                "Team Fortress 2"
+            ],
+            "accept": {
+                "Overwatch": [],
+                "Team Fortress 2": [
+                    "Team Fortress"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Thor (god)",
+                "Zeus"
+            ],
+            "accept": {
+                "Thor (god)": [
+                    "thor"
+                ],
+                "Zeus": [
+                    "jupiter"
+                ]
+            }
+        },
+        {
+            "names": [
+                "The Moon",
+                "Mars"
+            ],
+            "accept": {
+                "The Moon": [
+                    "moon"
+                ],
+                "Mars": [
+                    "mars"
+                ]
+            }
+        },
+        {
+            "names": [
+                "EA Games",
+                "Ubisoft"
+            ],
+            "accept": {
+                "EA Games": [
+                    "ea"
+                ],
+                "Ubisoft": [
+                    ""
+                ]
+            }
+        },
+        {
+            "names": [
+                "Hayao Miyazaki",
+                "Makoto Shinkai"
+            ],
+            "accept": {
+                "Hayao Miyazaki": [
+                    "miyazaki"
+                ],
+                "Mars": [
+                    "shinkai"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Apple (Technology company)",
+                "Microsoft"
+            ],
+            "accept": {
+                "Apple (Technology company)": [
+                    "apple"
+                ],
+                "Microsoft": []
+            }
+        },
+        {
+            "names": [
+                "Twitch",
+                "Youtube"
+            ],
+            "accept": {
+                "Twitch": [],
+                "Youtube": []
+            }
+        },
+        {
+            "names": [
+                "Quentin Tarantino",
+                "James Gunn"
+            ],
+            "accept": {
+                "Quentin Tarantino": [
+                    "tarantino"
+                ],
+                "James Gunn": [
+                    "gunn"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Quentin Tarantino",
+                "James Gunn"
+            ],
+            "accept": {
+                "Quentin Tarantino": [
+                    "tarantino"
+                ],
+                "James Gunn": [
+                    "gunn"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Elon Musk",
+                "Jeff Bezos"
+            ],
+            "accept": {
+                "Elon Musk": [
+                    "musk"
+                ],
+                "Jeff Bezos": [
+                    "bezos"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Tintin",
+                "Spirou"
+            ],
+            "accept": {
+                "Tintin": [],
+                "Spirou": []
+            }
+        },
+        {
+            "names": [
+                "Counter Strike",
+                "Valorant"
+            ],
+            "accept": {
+                "Counter Strike": [
+                    "cs",
+                    "cs go"
+                ],
+                "Valorant": []
+            }
+        },
+        {
+            "names": [
+                "William Shakespear",
+                "Molière",
+                "Charles Dickens"
+            ],
+            "accept": {
+                "William Shakespear": [],
+                "Molière": [],
+                "Charles Dickens": []
+            }
+        },
+        {
+            "names": [
+                "Stephen King",
+                "Howard Philippe Lovecraft"
+            ],
+            "accept": {
+                "Stephen King": [
+                    "king"
+                ],
+                "Howard Philippe Lovecraft": [
+                    "lovecraft",
+                    "hp lovecraft"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Eagle",
+                "Vulture"
+            ],
+            "accept": {
+                "Eagle": [
+                    "hawk"
+                ],
+                "Vulture": []
+            }
+        },
+        {
+            "names": [
+                "Salvador Dali",
+                "Pablo Picasso"
+            ],
+            "accept": {
+                "Salvador Dali": [
+                    "dali"
+                ],
+                "Pablo Picasso": [
+                    "picasso"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Edmond Rostand",
+                "Alexandre Dumas"
+            ],
+            "accept": {
+                "Edmond Rostand": [
+                    "rostand"
+                ],
+                "Alexandre Dumas": [
+                    "dumas"
+                ]
+            }
+        },
+        {
+            "names": [
+                "John Wick",
+                "Neo (matrix)"
+            ],
+            "accept": {
+                "John Wick": [
+                    ""
+                ],
+                "Neo (matrix)": [
+                    "neo"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Jean-Jacques Rousseau",
+                "Brothers Grimm"
+            ],
+            "accept": {
+                "Jean-Jacques Rousseau": [
+                    "j j rousseau",
+                    "jean jacques rousseau",
+                    "rousseau"
+                ],
+                "Brothers Grimm": [
+                    "grimm brothers",
+                    "grimm"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Hephaestus",
+                "Prometheus (God)"
+            ],
+            "accept": {
+                "Hephaestus": [
+                    "vulcan"
+                ],
+                "Prometheus (God)": [
+                    "prometheus"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Zorro",
+                "d'Artagnan"
+            ],
+            "accept": {
+                "Zorro": [],
+                "d'Artagnan": [
+                    "artagnan",
+                    "count d'Artagnan",
+                    "the fourth musketeer"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Wolfgang Amadeus Mozart",
+                "Ludwig van Beethoven"
+            ],
+            "accept": {
+                "Wolfgang Amadeus Mozart": [
+                    "mozart",
+                    "wolfgang mozart",
+                    "amadeus mozart"
+                ],
+                "Ludwig van Beethoven": [
+                    "beethoven"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Space Invaders",
+                "Pacman"
+            ],
+            "accept": {
+                "Space Invaders": [],
+                "Pacman": [
+                    "pac man"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Albus Dumbledore",
+                "Gandalf"
+            ],
+            "accept": {
+                "Albus Dumbledore": [
+                    "dumbledore"
+                ],
+                "Gandalf": []
+            }
+        },
+        {
+            "names": [
+                "Doom guy",
+                "Duke Nukem"
+            ],
+            "accept": {
+                "Doom guy": [
+                    "doom"
+                ],
+                "Duke Nukem": []
+            }
+        },
+        {
+            "names": [
+                "Steven Spielberg",
+                "George Lucas",
+                "Tim Burton"
+            ],
+            "accept": {
+                "Steven Spielberg": [
+                    "spielberg"
+                ],
+                "George Lucas": [
+                    "lucas"
+                ],
+                "Tim Burton":[
+                    "burton"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Kimba the White Lion",
+                "Simba (the lion king)"
+            ],
+            "accept": {
+                "Kimba the White Lion": [
+                    "kimba",
+                    "leo the lion"
+                ],
+                "Simba (the lion king)": [
+                    "simba",
+                    "lion king"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Pokémon",
+                "Digimon"
+            ],
+            "accept": {
+                "Pokémon": [
+                    "pokemon"
+                ],
+                "Digimon": [
+                    "digimon"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Donald Trump",
+                "Vladimir Putin"
+            ],
+            "accept": {
+                "Donald Trump": [
+                    "trump"
+                ],
+                "Vladimir Putin": [
+                    "putin"
+                ]
+            }
+        },
+        {
+            "names": [
+                "Will Smith",
+                "Eddy Murphy"
+            ],
+            "accept": {
+                "Will Smith": [
+                    "smith"
+                ],
+                "Eddy Murphy": [
+                    "murphy"
+                ]
+            }
+        }, {
+            "names":["Alien (Xenomorph)", "Predator (Cinema)"],
+            "accept": {
+                "Alien (Xenomorph)":["alien"],
+                "Predator (Cinema)":["predator"]
+            }
+        }, {
+            "names":["Zelda", "Peach (princess)"],
+            "accept": {
+                "Zelda":[],
+                "Peach (princess)":["peach"]
+            }
+        }, {
+            "names":["Albert Einstein", "Stephen Hawking"],
+            "accept":{
+                "Albert Einstein":["einstein"],
+                "Stephen Hawking":["hawking"]
+            }
+        }, {
+            "names":["Police Officer", "Firefighter"],
+            "accept":{
+                "Police Officer":["policeman"],
+                "Firefighter":[]
+            }
+        }, {
+            "names":["American Football", "Rugby"],
+            "accept":{
+                "American Football":[],
+                "Rugby":[]
+            }
+        }, {
+            "names":["Balista", "Crossbow"],
+            "accept":{
+                "Crossbow":["arbalest"],
+                "Balista":[]
+            }
+        },{
+            "names":["The Kraken", "Cthulhu"],
+            "accept":{
+                "The Kraken":["kraken"],
+                "Cthulhu":["Ctulhu", "C'thulhu"]
+            }
+        }, {
+            "names":["Rock-'n-roll", "Heavy Metal"],
+            "accept":{
+                "Rock-'n-roll":["rock", "rock and roll", "rock n' roll"],
+                "Heavy Metal":["metal"]
+            }
+        }, {
+            "names":["Tomb Raider", "Uncharted"],
+            "accept":{
+                "Tomb Raider":[],
+                "Uncharted":[]
+            }
+        }, {
+            "names":["L (death note)", "Professor Layton"],
+            "accept":{
+                "L (death note)":["l", "lawliet", "l lawliet"],
+                "Professor Layton":["layton", "hershel layton"]
+            }
+        },{
+            "names":["TikTok", "Twitch"],
+            "accept":{
+                "TikTok":[],
+                "Twitch":[]
+            }
+        },{
+            "names":["Excalibur", "Mjölnir"],
+            "accept":{
+                "Excalibur":[],
+                "Mjölnir":[]
+            }
+        },{
+            "names":["Snow White", "Esmeralda (Notre-Dame de Paris)"],
+            "accept":{
+                "Snow White":[],
+                "Esmeralda":[]
+            }
+        },{
+            "names":["Largo Winch", "Nicky Larson"],
+            "accept":{
+                "Largo Winch":["Winch"],
+                "Nicky Larson":["Larson"]
+            }
+        }, {
+            "names":["Heracles", "Beowulf"],
+            "accept":{
+                "Heracles":["hercules"],
+                "Beowulf":[]
+            }
+        }, {
+            "names":["Cruella","Bloody Mary"],
+            "accept":{
+                "Cruella":[],
+                "Bloody Mary":[]
+            }
+        },{
+            "names":["Masahiro Sakurai", "Hideo Kojima", "Shigeru Miyamoto", "Hironobu Sakaguchi"],
+            "accept":{
+                "Masahiro Sakurai":["sakurai"],
+                "Hideo Kojima":["kojima"],
+                "Shigeru Miyamoto":["miyamoto"],
+                "Hironobu Sakaguchi":["sakaguchi"]
+            }
+        }, {
+            "names":["Plato", "Aristotle"],
+            "accept":{
+                "Plato":["platon"],
+                "Aristotle":["aristote"]
+            }
+        }, {
+            "names":["Plato", "Aristotle"],
+            "accept":{
+                "Plato":["platon"],
+                "Aristotle":["aristote"]
+            }
+        }, {
+            "names":["GLaDOS", "HAL (2001: A space odyssey)"],
+            "accept":{
+                "GLaDOS":[],
+                "HAL (2001: A space odyssey)":["hal"]
+            }
+        }, {
+            "names":["door to door salesman", "Jehovah's Witnesses"],
+            "accept":{
+                "door to door salesman":["traveling salesman", "traveling agent", "direct sales representatives", "in person sales"],
+                "Jehovah's Witnesses":["jehovah witnesses"]
+            }
+        }, {
+            "names":["Victor Hugo", "Charles Baudelaire"],
+            "accept":{
+                "Victor Hugo":["hugo"],
+                "Charles Baudelaire":["baudelaire"]
+            }
+        }, {
+            "names":["John Wick","John Rambo"],
+            "accept":{
+                "John Wick":[],
+                "John Rambo":["Rambo"]
+            }
+        }, {
+            "names":["The Joker", "Pennywise"],
+            "accept":{
+                "The Joker":["joken"],
+                "Pennywise":["it"]
+            }
+        }, {
+            "names":["Boba Fett", "Master Chief"],
+            "accept":{
+                "Boba Fett":["jango fett"],
+                "Master Chief":[]
+            }
+        }, {
+            "names":["Link (the Legend of Zelda)", "Cloud (Final Fantasy VII)"],
+            "accept":{
+                "Link (the Legend of Zelda)":["link"],
+                "Cloud (Final Fantasy VII)":["cloud"]
+            }
+        },{
+            "names":["Samus Aran", "Ellen Ripley"],
+            "accept":{
+                "Samus Aran":["samus"],
+                "Ellen Ripley":["ripley"]
+            }
+        },{
+            "names":["Samus Aran", "Ellen Ripley"],
+            "accept":{
+                "Samus Aran":["samus"],
+                "Ellen Ripley":["ripley"]
+            }
+        }, {
+            "names":["Chess", "Draughts (checkers)"],
+            "accept":{
+                "Chess":[],
+                "Draughts (checkers)":["draughts", "checkers"]
+            }
+        }, {
+            "names":["Snake (Metal Gear Solid)", "Sam Fisher (Splinter Cell)"],
+            "accept":{
+                "Snake (Metal Gear Solid)":["snake"],
+                "Sam Fisher (Splinter Cell)":["sam fisher", "fisher"]
+            }
+        }, {
+            "names":["Breakfast", "Dessert"],
+            "accept":{
+                "breakfast":[],
+                "dessert":[]
+            }
+        }, {
+            "names":["French Revolution", "Boston tea party"],
+            "accept":{
+                "French Revolution":["1789"],
+                "Boston tea party":["tea party"]
+            }
+        }
+    ]
+}

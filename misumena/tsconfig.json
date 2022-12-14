@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "sourceMap": true,
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "models/*": [
+        "src/models/*"
+      ],
+      "shared/*":[
+        "../backend/src/shared/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "jsx": "react"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../backend/src/shared/**/*.ts"
+, "../backend/src/socket/users/UsersAction.ts", "../backend/src/models/Room.ts", "../backend/src/shared/sharedModels/IRoom.ts", "../backend/src/objects/VoteState.ts"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
