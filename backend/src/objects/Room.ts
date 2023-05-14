@@ -90,6 +90,7 @@ export class Room {
 
     public submitWord(userId: string, newWord: string) {
         if (this.currentTurnUserId !== userId) throw "It's not your turn";
+        if (this.roomState !== "ongoing") return;
         if (this.currentGuesses[userId]) this.currentGuesses[userId].push(newWord);
         else this.currentGuesses[userId] = [newWord];
         this.passTurn();

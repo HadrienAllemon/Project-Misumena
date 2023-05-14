@@ -1,10 +1,8 @@
 import * as React from "react";
 import { useContext, useState } from "react";
 import { SocketContext } from "../../contexts/socket/SocketContext";
-import TextField from '@mui/material/TextField';
-import { Button } from "@mui/material";
-import {PlayArrow} from '@mui/icons-material';
 import { useParams } from "react-router-dom";
+import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 
 const LogIntoRoom = (props) => {
     const { socket, dispatch } = useContext(SocketContext);
@@ -16,10 +14,13 @@ const LogIntoRoom = (props) => {
     }
     return (
         <div style={{display:"flex", flexDirection:"column", width:"350px", margin:"auto"}}>
-            <TextField value={playerName} onChange={(event) => setPlayerName(event.target.value)} id="standard-basic" label="What should we call you ?" variant="standard" />
-            <Button onClick={login} style={{width:"60px"}} variant="contained" endIcon={<PlayArrow />}>
+            <FormControl>
+            <FormLabel>What should we call you ?</FormLabel>
+            <Input value={playerName} onChange={(event) => setPlayerName(event.target.value)} id="standard-basic"  variant="standard" />
+            <Button onClick={login} style={{width:"60px"}} variant="contained">
                 GO
             </Button>
+            </FormControl>
         </div>
     )
 }

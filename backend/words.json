@@ -173,14 +173,12 @@
         },
         {
             "names": [
-                "Pikachu",
-                "Charmender",
-                "Pichu"
+                "Squirtle",
+                "Charmender"
             ],
             "accept": {
-                "Pikachu": [],
-                "Charmender": [],
-                "Pichu": []
+                "Squirtle": [],
+                "Charmender": []
             }
         },
         {
@@ -874,7 +872,7 @@
                 "George Lucas": [
                     "lucas"
                 ],
-                "Tim Burton":[
+                "Tim Burton": [
                     "burton"
                 ]
             }
@@ -936,199 +934,428 @@
                     "murphy"
                 ]
             }
-        }, {
-            "names":["Alien (Xenomorph)", "Predator (Cinema)"],
+        },
+        {
+            "names": [
+                "Alien (Xenomorph)",
+                "Predator (Cinema)"
+            ],
             "accept": {
-                "Alien (Xenomorph)":["alien"],
-                "Predator (Cinema)":["predator"]
+                "Alien (Xenomorph)": [
+                    "alien"
+                ],
+                "Predator (Cinema)": [
+                    "predator"
+                ]
             }
-        }, {
-            "names":["Zelda", "Peach (princess)"],
+        },
+        {
+            "names": [
+                "Zelda",
+                "Peach (princess)"
+            ],
             "accept": {
-                "Zelda":[],
-                "Peach (princess)":["peach"]
+                "Zelda": [],
+                "Peach (princess)": [
+                    "peach"
+                ]
             }
-        }, {
-            "names":["Albert Einstein", "Stephen Hawking"],
-            "accept":{
-                "Albert Einstein":["einstein"],
-                "Stephen Hawking":["hawking"]
+        },
+        {
+            "names": [
+                "Albert Einstein",
+                "Stephen Hawking"
+            ],
+            "accept": {
+                "Albert Einstein": [
+                    "einstein"
+                ],
+                "Stephen Hawking": [
+                    "hawking"
+                ]
             }
-        }, {
-            "names":["Police Officer", "Firefighter"],
-            "accept":{
-                "Police Officer":["policeman"],
-                "Firefighter":[]
+        },
+        {
+            "names": [
+                "Police Officer",
+                "Firefighter"
+            ],
+            "accept": {
+                "Police Officer": [
+                    "policeman"
+                ],
+                "Firefighter": []
             }
-        }, {
-            "names":["American Football", "Rugby"],
-            "accept":{
-                "American Football":[],
-                "Rugby":[]
+        },
+        {
+            "names": [
+                "American Football",
+                "Rugby"
+            ],
+            "accept": {
+                "American Football": [],
+                "Rugby": []
             }
-        }, {
-            "names":["Balista", "Crossbow"],
-            "accept":{
-                "Crossbow":["arbalest"],
-                "Balista":[]
+        },
+        {
+            "names": [
+                "Balista",
+                "Crossbow"
+            ],
+            "accept": {
+                "Crossbow": [
+                    "arbalest"
+                ],
+                "Balista": []
             }
-        },{
-            "names":["The Kraken", "Cthulhu"],
-            "accept":{
-                "The Kraken":["kraken"],
-                "Cthulhu":["Ctulhu", "C'thulhu"]
+        },
+        {
+            "names": [
+                "The Kraken",
+                "Cthulhu"
+            ],
+            "accept": {
+                "The Kraken": [
+                    "kraken"
+                ],
+                "Cthulhu": [
+                    "Ctulhu",
+                    "C'thulhu"
+                ]
             }
-        }, {
-            "names":["Rock-'n-roll", "Heavy Metal"],
-            "accept":{
-                "Rock-'n-roll":["rock", "rock and roll", "rock n' roll"],
-                "Heavy Metal":["metal"]
+        },
+        {
+            "names": [
+                "Rock-'n-roll",
+                "Heavy Metal"
+            ],
+            "accept": {
+                "Rock-'n-roll": [
+                    "rock",
+                    "rock and roll",
+                    "rock n' roll"
+                ],
+                "Heavy Metal": [
+                    "metal"
+                ]
             }
-        }, {
-            "names":["Tomb Raider", "Uncharted"],
-            "accept":{
-                "Tomb Raider":[],
-                "Uncharted":[]
+        },
+        {
+            "names": [
+                "Tomb Raider",
+                "Uncharted"
+            ],
+            "accept": {
+                "Tomb Raider": [],
+                "Uncharted": []
             }
-        }, {
-            "names":["L (death note)", "Professor Layton"],
-            "accept":{
-                "L (death note)":["l", "lawliet", "l lawliet"],
-                "Professor Layton":["layton", "hershel layton"]
+        },
+        {
+            "names": [
+                "L (death note)",
+                "Professor Layton"
+            ],
+            "accept": {
+                "L (death note)": [
+                    "l",
+                    "lawliet",
+                    "l lawliet"
+                ],
+                "Professor Layton": [
+                    "layton",
+                    "hershel layton"
+                ]
             }
-        },{
-            "names":["TikTok", "Twitch"],
-            "accept":{
-                "TikTok":[],
-                "Twitch":[]
+        },
+        {
+            "names": [
+                "TikTok",
+                "Twitch"
+            ],
+            "accept": {
+                "TikTok": [],
+                "Twitch": []
             }
-        },{
-            "names":["Excalibur", "Mjölnir"],
-            "accept":{
-                "Excalibur":[],
-                "Mjölnir":[]
+        },
+        {
+            "names": [
+                "Excalibur",
+                "Mjölnir"
+            ],
+            "accept": {
+                "Excalibur": [],
+                "Mjölnir": []
             }
-        },{
-            "names":["Snow White", "Esmeralda (Notre-Dame de Paris)"],
-            "accept":{
-                "Snow White":[],
-                "Esmeralda":[]
+        },
+        {
+            "names": [
+                "Snow White",
+                "Esmeralda (Notre-Dame de Paris)"
+            ],
+            "accept": {
+                "Snow White": [],
+                "Esmeralda": []
             }
-        },{
-            "names":["Largo Winch", "Nicky Larson"],
-            "accept":{
-                "Largo Winch":["Winch"],
-                "Nicky Larson":["Larson"]
+        },
+        {
+            "names": [
+                "Largo Winch",
+                "Nicky Larson"
+            ],
+            "accept": {
+                "Largo Winch": [
+                    "Winch"
+                ],
+                "Nicky Larson": [
+                    "Larson"
+                ]
             }
-        }, {
-            "names":["Heracles", "Beowulf"],
-            "accept":{
-                "Heracles":["hercules"],
-                "Beowulf":[]
+        },
+        {
+            "names": [
+                "Heracles",
+                "Beowulf"
+            ],
+            "accept": {
+                "Heracles": [
+                    "hercules"
+                ],
+                "Beowulf": []
             }
-        }, {
-            "names":["Cruella","Bloody Mary"],
-            "accept":{
-                "Cruella":[],
-                "Bloody Mary":[]
+        },
+        {
+            "names": [
+                "Cruella",
+                "Bloody Mary"
+            ],
+            "accept": {
+                "Cruella": [],
+                "Bloody Mary": []
             }
-        },{
-            "names":["Masahiro Sakurai", "Hideo Kojima", "Shigeru Miyamoto", "Hironobu Sakaguchi"],
-            "accept":{
-                "Masahiro Sakurai":["sakurai"],
-                "Hideo Kojima":["kojima"],
-                "Shigeru Miyamoto":["miyamoto"],
-                "Hironobu Sakaguchi":["sakaguchi"]
+        },
+        {
+            "names": [
+                "Masahiro Sakurai",
+                "Hideo Kojima",
+                "Shigeru Miyamoto",
+                "Hironobu Sakaguchi"
+            ],
+            "accept": {
+                "Masahiro Sakurai": [
+                    "sakurai"
+                ],
+                "Hideo Kojima": [
+                    "kojima"
+                ],
+                "Shigeru Miyamoto": [
+                    "miyamoto"
+                ],
+                "Hironobu Sakaguchi": [
+                    "sakaguchi"
+                ]
             }
-        }, {
-            "names":["Plato", "Aristotle"],
-            "accept":{
-                "Plato":["platon"],
-                "Aristotle":["aristote"]
+        },
+        {
+            "names": [
+                "Plato",
+                "Aristotle"
+            ],
+            "accept": {
+                "Plato": [
+                    "platon"
+                ],
+                "Aristotle": [
+                    "aristote"
+                ]
             }
-        }, {
-            "names":["Plato", "Aristotle"],
-            "accept":{
-                "Plato":["platon"],
-                "Aristotle":["aristote"]
+        },
+        {
+            "names": [
+                "Plato",
+                "Aristotle"
+            ],
+            "accept": {
+                "Plato": [
+                    "platon"
+                ],
+                "Aristotle": [
+                    "aristote"
+                ]
             }
-        }, {
-            "names":["GLaDOS", "HAL (2001: A space odyssey)"],
-            "accept":{
-                "GLaDOS":[],
-                "HAL (2001: A space odyssey)":["hal"]
+        },
+        {
+            "names": [
+                "GLaDOS",
+                "HAL (2001: A space odyssey)"
+            ],
+            "accept": {
+                "GLaDOS": [],
+                "HAL (2001: A space odyssey)": [
+                    "hal"
+                ]
             }
-        }, {
-            "names":["door to door salesman", "Jehovah's Witnesses"],
-            "accept":{
-                "door to door salesman":["traveling salesman", "traveling agent", "direct sales representatives", "in person sales"],
-                "Jehovah's Witnesses":["jehovah witnesses"]
+        },
+        {
+            "names": [
+                "door to door salesman",
+                "Jehovah's Witnesses"
+            ],
+            "accept": {
+                "door to door salesman": [
+                    "traveling salesman",
+                    "traveling agent",
+                    "direct sales representatives",
+                    "in person sales"
+                ],
+                "Jehovah's Witnesses": [
+                    "jehovah witnesses"
+                ]
             }
-        }, {
-            "names":["Victor Hugo", "Charles Baudelaire"],
-            "accept":{
-                "Victor Hugo":["hugo"],
-                "Charles Baudelaire":["baudelaire"]
+        },
+        {
+            "names": [
+                "Victor Hugo",
+                "Charles Baudelaire"
+            ],
+            "accept": {
+                "Victor Hugo": [
+                    "hugo"
+                ],
+                "Charles Baudelaire": [
+                    "baudelaire"
+                ]
             }
-        }, {
-            "names":["John Wick","John Rambo"],
-            "accept":{
-                "John Wick":[],
-                "John Rambo":["Rambo"]
+        },
+        {
+            "names": [
+                "John Wick",
+                "John Rambo"
+            ],
+            "accept": {
+                "John Wick": [],
+                "John Rambo": [
+                    "Rambo"
+                ]
             }
-        }, {
-            "names":["The Joker", "Pennywise"],
-            "accept":{
-                "The Joker":["joken"],
-                "Pennywise":["it"]
+        },
+        {
+            "names": [
+                "The Joker",
+                "Pennywise"
+            ],
+            "accept": {
+                "The Joker": [
+                    "joken"
+                ],
+                "Pennywise": [
+                    "it"
+                ]
             }
-        }, {
-            "names":["Boba Fett", "Master Chief"],
-            "accept":{
-                "Boba Fett":["jango fett"],
-                "Master Chief":[]
+        },
+        {
+            "names": [
+                "Boba Fett",
+                "Master Chief"
+            ],
+            "accept": {
+                "Boba Fett": [
+                    "jango fett"
+                ],
+                "Master Chief": []
             }
-        }, {
-            "names":["Link (the Legend of Zelda)", "Cloud (Final Fantasy VII)"],
-            "accept":{
-                "Link (the Legend of Zelda)":["link"],
-                "Cloud (Final Fantasy VII)":["cloud"]
+        },
+        {
+            "names": [
+                "Link (the Legend of Zelda)",
+                "Cloud (Final Fantasy VII)"
+            ],
+            "accept": {
+                "Link (the Legend of Zelda)": [
+                    "link"
+                ],
+                "Cloud (Final Fantasy VII)": [
+                    "cloud"
+                ]
             }
-        },{
-            "names":["Samus Aran", "Ellen Ripley"],
-            "accept":{
-                "Samus Aran":["samus"],
-                "Ellen Ripley":["ripley"]
+        },
+        {
+            "names": [
+                "Samus Aran",
+                "Ellen Ripley"
+            ],
+            "accept": {
+                "Samus Aran": [
+                    "samus"
+                ],
+                "Ellen Ripley": [
+                    "ripley"
+                ]
             }
-        },{
-            "names":["Samus Aran", "Ellen Ripley"],
-            "accept":{
-                "Samus Aran":["samus"],
-                "Ellen Ripley":["ripley"]
+        },
+        {
+            "names": [
+                "Samus Aran",
+                "Ellen Ripley"
+            ],
+            "accept": {
+                "Samus Aran": [
+                    "samus"
+                ],
+                "Ellen Ripley": [
+                    "ripley"
+                ]
             }
-        }, {
-            "names":["Chess", "Draughts (checkers)"],
-            "accept":{
-                "Chess":[],
-                "Draughts (checkers)":["draughts", "checkers"]
+        },
+        {
+            "names": [
+                "Chess",
+                "Draughts (checkers)"
+            ],
+            "accept": {
+                "Chess": [],
+                "Draughts (checkers)": [
+                    "draughts",
+                    "checkers"
+                ]
             }
-        }, {
-            "names":["Snake (Metal Gear Solid)", "Sam Fisher (Splinter Cell)"],
-            "accept":{
-                "Snake (Metal Gear Solid)":["snake"],
-                "Sam Fisher (Splinter Cell)":["sam fisher", "fisher"]
+        },
+        {
+            "names": [
+                "Snake (Metal Gear Solid)",
+                "Sam Fisher (Splinter Cell)"
+            ],
+            "accept": {
+                "Snake (Metal Gear Solid)": [
+                    "snake"
+                ],
+                "Sam Fisher (Splinter Cell)": [
+                    "sam fisher",
+                    "fisher"
+                ]
             }
-        }, {
-            "names":["Breakfast", "Dessert"],
-            "accept":{
-                "breakfast":[],
-                "dessert":[]
+        },
+        {
+            "names": [
+                "Breakfast",
+                "Dessert"
+            ],
+            "accept": {
+                "breakfast": [],
+                "dessert": []
             }
-        }, {
-            "names":["French Revolution", "Boston tea party"],
-            "accept":{
-                "French Revolution":["1789"],
-                "Boston tea party":["tea party"]
+        },
+        {
+            "names": [
+                "French Revolution",
+                "Boston tea party"
+            ],
+            "accept": {
+                "French Revolution": [
+                    "1789"
+                ],
+                "Boston tea party": [
+                    "tea party"
+                ]
             }
         }
     ]
