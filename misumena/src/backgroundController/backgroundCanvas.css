@@ -1,0 +1,14 @@
+.bgCanvas {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    filter: hue-rotate(0) saturate(1) brightness(1);
+    transition: filter 3s ease;
+}
+
+.bgCanvas.night{
+    filter: hue-rotate(-66deg) saturate(.9) brightness(.9);
+    /* filter: hue-rotate(-66deg) brightness(.75); */
+}

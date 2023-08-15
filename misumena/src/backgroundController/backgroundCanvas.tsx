@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import cloud1 from "./Cloud1.png";
 import cloud2 from "./Cloud2.png";
 import sky from "./sky.png";
@@ -6,6 +6,7 @@ import stars from "./Stars.png";
 import sun from "./Sun2.png";
 import shades from "./shades.png";
 import ray from "./Ray.png";
+import "./backgroundCanvas.css";
 const Sky = new Image();
 Sky.src = sky;
 const Cloud1 = new Image();
@@ -34,7 +35,6 @@ class RayAnimate {
         const { ctx } = this;
         ctx.save();
         const rayOffset = window.innerWidth / 2;
-        console.log(rayOffset);
         ctx.translate(rayOffset, window.innerHeight + 50);
         ctx.rotate(degToRad(this.offset));
         ctx.translate(-rayOffset, -window.innerHeight - 50);
@@ -50,8 +50,8 @@ const degToRad = (deg: number) => {
 }
 
 export const BackgroundCanvas = () => {
-    const skyRotation = useMemo(() => ({ current: 0 }), [])
     const canvasRef = useRef<HTMLCanvasElement>();
+    const [night, setNight] = useState<boolean>(false);
     const animate = (rays:RayAnimate[]=[]) => {
         if (!canvasRef?.current) return;
         const canvas = canvasRef.current;
@@ -72,6 +72,7 @@ export const BackgroundCanvas = () => {
         requestAnimationFrame(()=>animate(rays));
     }
     useEffect(() => {
+        setTimeout(()=>setNight(true),1500)
         if (canvasRef.current) {
             const rays = [
                 new RayAnimate(-800, canvasRef.current.getContext("2d")),
@@ -87,6 +88,6 @@ export const BackgroundCanvas = () => {
 
 
     return (
-        <canvas style={{ height: "100vh", width: "100vw", position: "fixed", top: 0, left: 0 }} ref={canvasRef} />
+        <canvas className={`bgCanvas ${night && "night"}`} ref={canvasRef} />
     )
 }
