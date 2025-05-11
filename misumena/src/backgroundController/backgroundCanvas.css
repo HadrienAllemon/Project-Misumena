@@ -5,11 +5,30 @@
     top: 0;
     left: 0;
     filter: hue-rotate(0) saturate(1) brightness(1);
-    transition: filter 3s ease;
+    transition: filter 3s ease, opacity 3s ease;
     object-fit: cover;
 }
-
+/* 
 .bgCanvas.night{
-    filter: hue-rotate(-66deg) saturate(.9) brightness(.9);
-    /* filter: hue-rotate(-66deg) brightness(.75); */
+    filter: hue-rotate(-66deg) brightness(.75);
+} */
+
+.sky.night{
+    filter: hue-rotate(-87deg) saturate(.9) brightness(.85);
+}
+
+.clouds.night{
+    filter: hue-rotate(-50deg) saturate(1) brightness(.85);
+}
+
+.stars{
+    opacity: 0;
+}
+
+.stars.night{
+    opacity: .7;
+}
+
+.rays.night{
+    filter: hue-rotate(-66deg) saturate(0) brightness(0) opacity(0);
 }

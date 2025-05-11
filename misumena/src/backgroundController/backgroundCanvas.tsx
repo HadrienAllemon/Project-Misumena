@@ -237,42 +237,26 @@ export const BackgroundCanvas = ({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray 
         // return () => window.removeEventListener("resize", resize);
     }, []);
 
-    const drawSky = () =>{
+    const drawSky = () => {
         const ctx = skyRef.current?.getContext("2d");
         if (!ctx) return;
         ctx.clearRect(0, 0, skyRef.current.width, skyRef.current.height);
         ctx.drawImage(Sky, 0, 0, skyRef.current.width, skyRef.current.height);
-        ctx.drawImage(Sun, 0, 0, skyRef.current.width, skyRef.current.height);
         ctx.drawImage(Shades, 0, 0, skyRef.current.width, skyRef.current.height);
     }
 
-    useEffect(() => {
-        // SKY CANVAS
-        drawSky()
-       
-    }, []);
-
-    useEffect(() => {
-        // STARS CANVAS
+    const drawStars = () => {
         const ctx = starsRef.current.getContext("2d");
-        let frame = 0;
-        const maxFrames = 120;
-        const drawStars = () => {
-            const opacity = lerp(0, 1, easeInOutCubic(Math.min(1, frame / maxFrames)));
-            ctx.clearRect(0, 0, starsRef.current.width, starsRef.current.height);
-            ctx.globalAlpha = opacity;
-            ctx.drawImage(Stars, 0, 0, starsRef.current.width, starsRef.current.height);
-            ctx.globalAlpha = 1;
-            // if (frame < maxFrames) {
-            //     frame++;
-            //     requestAnimationFrame(drawStars);
-            // }
-        };
-        drawStars();
-    }, []);
+        ctx.clearRect(0, 0, starsRef.current.width, starsRef.current.height);
+        ctx.drawImage(Stars, 0, 0, starsRef.current.width, starsRef.current.height);
+        ctx.globalAlpha = 1;
+        // if (frame < maxFrames) {
+        //     frame++;
+        //     requestAnimationFrame(drawStars);
+        // }
+    }
 
-    useEffect(() => {
-        // RAYS CANVAS
+    const drawRays = () => {
         const ctx = raysRef.current.getContext("2d");
         rays.current = [
             new RayAnimate(Ray, -800, ctx),
@@ -289,28 +273,35 @@ export const BackgroundCanvas = ({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray 
             requestAnimationFrame(animateRays);
         };
         animateRays();
-    }, []);
+    }
 
-    useEffect(() => {
-        // CLOUD CANVAS
+    const drawClouds = () => {
         const ctx = cloudRef.current.getContext("2d");
         ctx.clearRect(0, 0, cloudRef.current.width, cloudRef.current.height);
         //   ctx.filter = `hue-rotate(${lerp(0, -50, nightProgress.current)}deg)`;
+        ctx.drawImage(Sun, 0, 0, skyRef.current.width, skyRef.current.height);
         ctx.drawImage(Cloud2, 0, 0, cloudRef.current.width, cloudRef.current.height);
         ctx.drawImage(Cloud1, 0, 0, cloudRef.current.width, cloudRef.current.height);
-        // requestAnimationFrame(drawClouds);
+    }
+
+    useEffect(() => {
+        drawSky()
+        drawStars();
+        drawRays()
+        drawClouds()
     }, []);
 
-    //   useEffect(() => {
-    //     setTimeout(() => setNight(true), 1500);
-    //   }, []);
+
+    useEffect(() => {
+        setTimeout(() => setNight(true), 1500);
+    }, []);
 
     return (
-        <>
-            <canvas ref={skyRef} className={"bgCanvas " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 0 }} />
-            <canvas ref={starsRef} className={"bgCanvas " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
-            <canvas ref={raysRef} className={"bgCanvas " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }} />
-            <canvas ref={cloudRef} className={"bgCanvas " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 3 }} />
-        </>
+        <div style={{ zIndex: -1, position: "fixed" }}>
+            <canvas ref={skyRef} className={"bgCanvas sky " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 0 }} />
+            <canvas ref={starsRef} className={"bgCanvas stars " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
+            <canvas ref={raysRef} className={"bgCanvas rays " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }} />
+            <canvas ref={cloudRef} className={"bgCanvas clouds " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 3 }} />
+        </div>
     );
 };
