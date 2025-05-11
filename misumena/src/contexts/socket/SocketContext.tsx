@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useMemo, useReducer, useRef } from 'react'
 import io, { Socket } from 'socket.io-client'
 import { IUser } from "models/IUser";
 import { SocketEmit } from "shared/SocketAction"
@@ -54,6 +54,8 @@ export type SocketDispatch = {
     type:"confirmVote",
     wordGuessed:string,
     userGuessed:string,
+} | {
+    type:"test"
 }
 
 interface SocketState {
@@ -74,74 +76,62 @@ const initalState: SocketState = {
     error: ""
 }
 
-const SocketReducer = (state: SocketState = initalState, action: SocketDispatch): SocketState => {
-    console.log("type", action.type);
+const SocketReducer = (state: SocketState, action: SocketDispatch): SocketState => {
     switch (action.type) {
         case "setUsers":
-            return {
-                ...state,
-                usersInRoom: action.users || []
-            }
+            return { ...state, usersInRoom: action.users || [] };
         case "setRoom":
-            console.log(state,action);
             return {
                 ...state,
                 room: action.room || null,
                 usersInRoom: action.users || state.usersInRoom,
-                currentUser: action.currentUser || action.users?.find((user) => user.id === state.currentUser.id) || state.currentUser
-            }
-        case "login": {
-            socket?.emit(SocketEmit.login, { name: action.name, room: action.room }, console.log);
-            return state;
-        }
-        case "loginSuccess": {
+                currentUser:
+                    action.currentUser ||
+                    action.users?.find(u => u.id === state.currentUser?.id) ||
+                    state.currentUser
+            };
+        case "loginSuccess":
             return {
                 ...state,
                 room: action.room,
                 usersInRoom: action.users,
                 currentUser: action.currentUser
-            }
-        }
-        case "submitWord": {
-            socket?.emit("submitWord", state.currentUser, action.word);
-            return state;
-        }
-        case "startGame": {
-            socket?.emit("startGame", state.currentUser);
-            return state;
-        }
-        case "callVote":{
-            socket?.emit("callVote", state.currentUser);
-            return state;
-        }
-        case "error": {
-            return {
-                ...state,
-                isError: true,
-                error: action.error
-            }
-        }
-        case "errorAknowledged": {
-            return {
-                ...state,
-                isError: false
-            }
-        }
-        // case "setVoteState":{
-        //     console.log(action.voteState);
-        //     return {
-        //         ...state,
-        //         voteState:action.voteState
-        //     }
-        // }
-        case "confirmVote":{
-            socket.emit("confirmVote", action.userGuessed, action.wordGuessed)
-        }
+            };
+        case "error":
+            return { ...state, isError: true, error: action.error };
+        case "errorAknowledged":
+            return { ...state, isError: false };
+        case "setVoteState":
+            return { ...state, voteState: action.voteState };
         default:
             return state;
     }
+};
 
-}
+const createSafeDispatch = (dispatch: React.Dispatch<SocketDispatch>, socket: Socket, getState: () => SocketState) => {
+    return (action: SocketDispatch) => {
+        console.log(action);
+        switch (action.type) {
+            case "login":
+                socket?.emit(SocketEmit.login, { name: action.name, room: action.room }, console.log);
+                break;
+            case "submitWord":
+                socket.emit("submitWord", getState().currentUser, action.word);
+                break;
+            case "startGame":
+                socket.emit("startGame", getState().currentUser);
+                break;
+            case "callVote":
+                socket.emit("callVote", getState().currentUser);
+                break;
+            case "confirmVote":
+                socket.emit("confirmVote", action.userGuessed, action.wordGuessed);
+                break;
+        }
+
+        dispatch(action); // Always update local state too
+    };
+};
 
 interface defaultValue {
     socket?: Socket
@@ -149,18 +139,31 @@ interface defaultValue {
     dispatch: React.Dispatch<SocketDispatch>;
 }
 
-const SocketContext = React.createContext<defaultValue>({ state: initalState, dispatch: () => { } });
+const SocketContext = React.createContext<{
+    state: SocketState;
+    dispatch: (action: SocketDispatch) => void;
+    socket: Socket;
+}>({ state: initalState, dispatch: () => {}, socket: null });
 
 const SocketProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(SocketReducer, initalState);
+    const [state, rawDispatch] = useReducer(SocketReducer, initalState);
+    const socketRef = useRef<Socket>(socket);
 
-    useEffect(() => initSocket(socket, dispatch),[]);
+    useEffect(() => {
+        initSocket(socketRef.current, rawDispatch);
+    }, []);
+
+    const safeDispatch = useMemo(
+        () => createSafeDispatch(rawDispatch, socketRef.current, () => state),
+        [state]
+    );
 
     return (
-        <SocketContext.Provider value={{ state, dispatch, socket }}>
+        <SocketContext.Provider value={{ state, dispatch: safeDispatch, socket: socketRef.current }}>
             {children}
         </SocketContext.Provider>
-    )
-}
+    );
+};
+
 
 export { SocketContext, SocketProvider }

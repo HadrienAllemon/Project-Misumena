@@ -31,7 +31,7 @@ const login = async ({ name, room }: socketArgs, callback: (user: loginCallBack)
   client.emit("loginSuccess", { users: usersInRoom, room: NewRoom, currentUser: user })
 };
 
-const logout = (reason: string, client: SocketClient) => {
+const logout = (reason: string,description:string, client: SocketClient) => {
   if (!client || !SocketState.io) return;
   console.log("User disconnected ", reason);
   const disconnectedUser = getUser(client.id);

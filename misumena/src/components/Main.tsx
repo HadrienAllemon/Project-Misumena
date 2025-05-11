@@ -13,7 +13,7 @@ const Main = () => {
     const { state } = useContext(SocketContext)
     return (
         <div className="App">
-                <BackgroundCanvasController />
+            <BackgroundCanvasController />
             <ErrorDialog />
             <Routes>
                 <Route path="/" element={<Login />} />
