@@ -1,6 +1,6 @@
 import { Button, Checkbox, Input } from "@chakra-ui/react";
 import React, { useContext, useEffect, useState } from "react";
-import { SocketContext } from "src/contexts/socket/SocketContext";
+import { SocketContext } from "../../../contexts/socket/SocketContext";
 
 const VoteTile = () => {
     const [voting, setVoting] = useState<boolean>(false);
@@ -9,7 +9,7 @@ const VoteTile = () => {
     const [userGuessed, setUserGuessed] = useState<string>("");
     const [wordGuessed, setWordGuessed] = useState<string>("");
     useEffect(() => {
-        setVoting(state.room.roomState === "voting");
+        setVoting(state.room?.roomState === "voting");
     }, [state.room?.roomState]);
 
     const onVoteClick = () => {

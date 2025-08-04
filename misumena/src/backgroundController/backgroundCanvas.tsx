@@ -141,10 +141,6 @@ import shades from "./shades.png";
 import ray from "./Ray.png";
 import "./backgroundCanvas.css";
 
-
-const lerp = (a, b, t) => a + (b - a) * t;
-const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
 class RayAnimate {
     offset = 0;
     ctx;
@@ -215,10 +211,10 @@ export const BackgroundCanvasController = () => {
 };
 
 export const BackgroundCanvas = ({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray }) => {
-    const skyRef = useRef<HTMLCanvasElement>();
-    const starsRef = useRef<HTMLCanvasElement>();
-    const raysRef = useRef<HTMLCanvasElement>();
-    const cloudRef = useRef<HTMLCanvasElement>();
+    const skyRef = useRef<HTMLCanvasElement>(null);
+    const starsRef = useRef<HTMLCanvasElement>(null);
+    const raysRef = useRef<HTMLCanvasElement>(null);
+    const cloudRef = useRef<HTMLCanvasElement>(null);
     const nightProgress = useRef(0);
     const rays = useRef([]);
     const [night, setNight] = useState(false);
@@ -266,13 +262,13 @@ export const BackgroundCanvas = ({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray 
             new RayAnimate(Ray, 800, ctx),
         ];
 
-        const animateRays = () => {
-            ctx.clearRect(0, 0, raysRef.current.width, raysRef.current.height);
-            // ctx.filter = `hue-rotate(${lerp(0, -66, nightProgress.current)}deg) brightness(${lerp(1, 0.9, nightProgress.current)})`;
-            rays.current.forEach(ray => ray.animate());
-            requestAnimationFrame(animateRays);
-        };
-        animateRays();
+        // const animateRays = () => {
+        //     ctx.clearRect(0, 0, raysRef.current.width, raysRef.current.height);
+        //     // ctx.filter = `hue-rotate(${lerp(0, -66, nightProgress.current)}deg) brightness(${lerp(1, 0.9, nightProgress.current)})`;
+        //     rays.current.forEach(ray => ray.animate());
+        //     requestAnimationFrame(animateRays);
+        // };
+        // animateRays();
     }
 
     const drawClouds = () => {

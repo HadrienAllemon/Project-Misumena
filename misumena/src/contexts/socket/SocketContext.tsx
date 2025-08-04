@@ -1,12 +1,11 @@
-import React, { useEffect, useMemo, useReducer, useRef } from 'react'
+import React, { PropsWithChildren, useEffect, useMemo, useReducer, useRef } from 'react'
 import io, { Socket } from 'socket.io-client'
 import { IUser } from "models/IUser";
-import { SocketEmit } from "shared/SocketAction"
-import { ClientToServerEvents, loginCallBack, ServerToClientEvents } from 'shared/SocketModels';
+import { SocketEmit } from 'shared/sharedModels/SocketAction'
+import { ClientToServerEvents, loginCallBack, ServerToClientEvents } from 'shared/sharedModels/SocketModels';
 import { initSocket } from './InitSocket';
 import { IRoom } from 'shared/sharedModels/IRoom';
 import { IVoteStateClient } from 'models/IVoteStateClient';
-import { VoteState } from '../../../../backend/src/objects/VoteState';
 
 // export const enum SocketEmit {
 //     login="login",
@@ -60,9 +59,9 @@ export type SocketDispatch = {
 
 interface SocketState {
     room: IRoom | null,
-    voteState:IVoteStateClient,
+    voteState:IVoteStateClient | null,
     usersInRoom: IUser[],
-    currentUser: IUser,
+    currentUser: IUser | null,
     isError: boolean,
     error: string,
 }
@@ -142,10 +141,10 @@ interface defaultValue {
 const SocketContext = React.createContext<{
     state: SocketState;
     dispatch: (action: SocketDispatch) => void;
-    socket: Socket;
+    socket: Socket|null;
 }>({ state: initalState, dispatch: () => {}, socket: null });
 
-const SocketProvider = ({ children }) => {
+const SocketProvider:React.FC<PropsWithChildren> = ({ children }) => {
     const [state, rawDispatch] = useReducer(SocketReducer, initalState);
     const socketRef = useRef<Socket>(socket);
 

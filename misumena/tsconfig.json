@@ -1,10 +1,27 @@
 {
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
     "types": [
       "node"
     ],
@@ -13,18 +30,24 @@
       "models/*": [
         "src/models/*"
       ],
-      "shared/*":[
-        "../backend/src/shared/*"
+      "src/*": [
+        "./src/*"
+      ],
+      "shared/*": [
+        "../shared/*"
       ]
     },
-    "esModuleInterop": true,
-    "jsx": "react"
+    "jsx": "react-jsx"
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "../backend/src/shared/**/*.ts"
-, "../backend/src/socket/users/UsersAction.ts", "../backend/src/models/Room.ts", "../backend/src/shared/sharedModels/IRoom.ts", "../backend/src/objects/VoteState.ts"  ],
+    // "../backend/src/shared/**/*.ts",
+    // "../backend/src/socket/users/UsersAction.ts",
+    // "../backend/src/models/Room.ts",
+    // "../backend/src/shared/sharedModels/IRoom.ts",
+    // "../backend/src/objects/VoteState.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,5 +1,5 @@
-import { IUser } from "../models/IUser";
-import { IRoom } from "./sharedModels/IRoom";
+import { IUser } from "./IUser";
+import { IRoom } from "./IRoom";
 
 export interface loginCallBack {
     users:IUser[];
