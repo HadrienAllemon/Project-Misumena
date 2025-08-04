@@ -1,9 +1,7 @@
-import { IRoom } from 'shared/sharedModels/IRoom';
+import { IRoom, ClientToServerEvents, loginCallBack, ServerToClientEvents } from 'shared';
 import { IUser } from 'models/IUser';
-import { ClientToServerEvents, loginCallBack, ServerToClientEvents } from 'shared/SocketModels'
 import { Socket } from 'socket.io-client'
 import { SocketDispatch } from './SocketContext'
-import { IVoteStateClient } from 'models/IVoteStateClient';
 
 
 export const initSocket = (Socket:Socket<ServerToClientEvents,ClientToServerEvents>, dispatch:React.Dispatch<SocketDispatch>) => {

@@ -1,12 +1,11 @@
 import { Socket } from "socket.io";
 import { IUser } from "../../models/IUser";
 import { IWord, IWordsList } from "../../models/IWords";
-import { SocketClient } from "../../shared/SocketModels";
 import SocketState from "../../state/SocketState";
 import { getUser } from "../users/UsersAction";
 const wordlist: IWordsList = require("../../../words.json");
 
-export const SubmitWord = (user: IUser, word: string, client: SocketClient) => {
+export const SubmitWord = (user: IUser, word: string, client: Socket) => {
     console.log("submit word > ", word);
     try {
         const room = SocketState.findRoom(user.room);
@@ -20,7 +19,7 @@ export const SubmitWord = (user: IUser, word: string, client: SocketClient) => {
     }
 }
 
-export const StartGame = (user: IUser, client: SocketClient) => {
+export const StartGame = (user: IUser, client: Socket) => {
     try {
         const room = SocketState.findRoom(user.room);
         if (!room) throw "Room not found : " + user.room;
@@ -39,7 +38,7 @@ const getRandomWord = (): IWord => {
     return wordlist.words[index];
 }
 
-export const callVote = (client: SocketClient) => {
+export const callVote = (client: Socket) => {
     try {
         const user = getUser(client.id);
         if (!user) throw "User not found : " + client.id;
@@ -53,7 +52,7 @@ export const callVote = (client: SocketClient) => {
     }
 }
 
-export const confirmVote = (userGuessed: string, wordGuessed: string, client: SocketClient) => {
+export const confirmVote = (userGuessed: string, wordGuessed: string, client: Socket) => {
     try {
         const user = getUser(client.id);
         if (!user) throw "user not found : " + client.id;

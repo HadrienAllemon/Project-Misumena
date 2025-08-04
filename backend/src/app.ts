@@ -1,7 +1,7 @@
 import express from "express";
 import * as socketio from "socket.io";
 import { DefaultEventsMap } from "socket.io/dist/typed-events";
-import { ClientToServerEvents, ServerToClientEvents } from "./shared/SocketModels";
+import { ClientToServerEvents, ServerToClientEvents } from "shared";
 import SocketState from "./state/SocketState";
 import {login, logout} from "./socket/LoginLogout/LoginLogout";
 import { callVote, confirmVote, StartGame, SubmitWord,  } from "./socket/GameAction/GameAction";
@@ -34,7 +34,7 @@ var io:socketio.Server<ClientToServerEvents, ServerToClientEvents, DefaultEvents
 // const rooms:string[] = [];
 
 io.on('connection', async (client) => {
-    console.log("New client connected");
+    console.log("New client connected", client.id);
     SocketState.io = io;
     // SocketState.client = client;
     

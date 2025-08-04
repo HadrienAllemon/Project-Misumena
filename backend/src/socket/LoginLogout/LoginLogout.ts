@@ -1,8 +1,9 @@
 import { createRandomString } from "../../miscfunctions/miscfunctions";
-import { loginCallBack, SocketClient } from "../../shared/SocketModels";
+import { loginCallBack } from "shared";
 import SocketState from "../../state/SocketState";
 import { addRoomIfNew, deleteRoom } from "../Rooms/RoomsAction";
 import { addUser, deleteUser, getUser, getUsers } from "../users/UsersAction";
+import { Socket } from "socket.io";
 
 
 interface socketArgs {
@@ -10,7 +11,7 @@ interface socketArgs {
   room: string;
 }
 
-const login = async ({ name, room }: socketArgs, callback: (user: loginCallBack) => void, client : SocketClient) => {
+const login = async ({ name, room }: socketArgs, callback: (user: loginCallBack) => void, client : Socket) => {
   if (!client || !SocketState.io) return;
   if (!room?.length) {
     room = createRandomString(SocketState.rooms.length);
@@ -31,7 +32,7 @@ const login = async ({ name, room }: socketArgs, callback: (user: loginCallBack)
   client.emit("loginSuccess", { users: usersInRoom, room: NewRoom, currentUser: user })
 };
 
-const logout = (reason: string,description:string, client: SocketClient) => {
+const logout = (reason: string,description:string, client: Socket) => {
   if (!client || !SocketState.io) return;
   console.log("User disconnected ", reason);
   const disconnectedUser = getUser(client.id);

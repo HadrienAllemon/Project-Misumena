@@ -1,9 +1,7 @@
-import { IRoom } from "../shared/sharedModels/IRoom";
+import { IRoom, IRoomState, IRoomVoteResults } from "shared";
 import { IUser } from "../models/IUser";
 import { IWord } from "../models/IWords";
 import { VoteState } from "./VoteState";
-import {IRoomState} from "../shared/sharedModels/IRoom";
-import { IRoomVoteResults } from "../shared/sharedModels/IRoomVoteResults";
 interface roomsWords {
     [key: string]: string[];
 }

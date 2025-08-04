@@ -1,10 +1,8 @@
 import React, { PropsWithChildren, useEffect, useMemo, useReducer, useRef } from 'react'
 import io, { Socket } from 'socket.io-client'
 import { IUser } from "models/IUser";
-import { SocketEmit } from 'shared/sharedModels/SocketAction'
-import { ClientToServerEvents, loginCallBack, ServerToClientEvents } from 'shared/sharedModels/SocketModels';
+import { SocketEmit, ClientToServerEvents, loginCallBack, ServerToClientEvents, IRoom } from 'shared'
 import { initSocket } from './InitSocket';
-import { IRoom } from 'shared/sharedModels/IRoom';
 import { IVoteStateClient } from 'models/IVoteStateClient';
 
 // export const enum SocketEmit {
@@ -23,7 +21,7 @@ export type SocketDispatch = {
 } | {
     type: "setRoom",
     room?: IRoom;
-    users: IUser[];
+    users?: IUser[];
     currentUser?:IUser;
 } | {
     type: "login",

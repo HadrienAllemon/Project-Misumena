@@ -1,6 +1,6 @@
 import { IUser } from "../models/IUser";
 import * as socketio from "socket.io";
-import { ClientToServerEvents, ServerToClientEvents } from "../shared/SocketModels";
+import { ClientToServerEvents, ServerToClientEvents } from "shared";
 import { DefaultEventsMap } from "socket.io/dist/typed-events";
 import { Room } from "../objects/Room";
 
