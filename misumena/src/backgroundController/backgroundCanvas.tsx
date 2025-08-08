@@ -141,151 +141,80 @@ import shades from "./shades.png";
 import ray from "./Ray.png";
 import "./backgroundCanvas.css";
 
-class RayAnimate {
-    offset = 0;
-    ctx;
-    Ray
-    constructor(Ray, offset, ctx) {
-        this.offset = offset;
-        this.ctx = ctx;
-        this.Ray = Ray
-    }
-    animate() {
-        const ctx = this.ctx;
-        ctx.save();
-        const rayOffset = window.innerWidth / 2;
-        ctx.translate(rayOffset, window.innerHeight + 50);
-        ctx.rotate((this.offset / 180) * Math.PI);
-        ctx.translate(-rayOffset, -window.innerHeight - 50);
-        ctx.drawImage(this.Ray, window.innerWidth / 2 - this.Ray.width, 50, this.Ray.width, this.Ray.height);
-        ctx.restore();
-        this.offset = this.offset > 1200 ? -800 : this.offset + .5;
-    }
-}
+// class RayAnimate {
+//     offset = 0;
+//     ctx;
+//     Ray
+//     constructor(Ray, offset, ctx) {
+//         this.offset = offset;
+//         this.ctx = ctx;
+//         this.Ray = Ray
+//     }
+//     animate() {
+//         const ctx = this.ctx;
+//         ctx.save();
+//         const rayOffset = window.innerWidth / 2;
+//         ctx.translate(rayOffset, window.innerHeight + 50);
+//         ctx.rotate((this.offset / 180) * Math.PI);
+//         ctx.translate(-rayOffset, -window.innerHeight - 50);
+//         ctx.drawImage(this.Ray, window.innerWidth / 2 - this.Ray.width, 50, this.Ray.width, this.Ray.height);
+//         ctx.restore();
+//         this.offset = this.offset > 1200 ? -800 : this.offset + .5;
+//     }
+// }
 
-const loadImage = (src: string): Promise<HTMLImageElement> =>
-    new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => resolve(img);
-        img.onerror = reject;
-    });
+// const loadImage = (src: string): Promise<HTMLImageElement> =>
+//     new Promise((resolve, reject) => {
+//         const img = new Image();
+//         img.src = src;
+//         img.onload = () => resolve(img);
+//         img.onerror = reject;
+//     });
 
-export const BackgroundCanvasController = () => {
-    const [images, setImages] = useState<{
-        Sky: HTMLImageElement;
-        Cloud1: HTMLImageElement;
-        Cloud2: HTMLImageElement;
-        Stars: HTMLImageElement;
-        Sun: HTMLImageElement;
-        Shades: HTMLImageElement;
-        Ray: HTMLImageElement;
-    } | null>(null);
+// export const BackgroundCanvasController = () => {
+//     const [images, setImages] = useState<{
+//         Sky: HTMLImageElement;
+//         Cloud1: HTMLImageElement;
+//         Cloud2: HTMLImageElement;
+//         Stars: HTMLImageElement;
+//         Sun: HTMLImageElement;
+//         Shades: HTMLImageElement;
+//         Ray: HTMLImageElement;
+//     } | null>(null);
 
-    useEffect(() => {
-        const loadAllImages = async () => {
-            try {
-                const [Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray] = await Promise.all([
-                    loadImage(sky),
-                    loadImage(cloud1),
-                    loadImage(cloud2),
-                    loadImage(stars),
-                    loadImage(sun),
-                    loadImage(shades),
-                    loadImage(ray),
-                ]);
-                setImages({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray });
-            } catch (err) {
-                console.error("Failed to load one or more images", err);
-            }
-        };
+//     useEffect(() => {
+//         const loadAllImages = async () => {
+//             try {
+//                 const [Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray] = await Promise.all([
+//                     loadImage(sky),
+//                     loadImage(cloud1),
+//                     loadImage(cloud2),
+//                     loadImage(stars),
+//                     loadImage(sun),
+//                     loadImage(shades),
+//                     loadImage(ray),
+//                 ]);
+//                 setImages({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray });
+//             } catch (err) {
+//                 console.error("Failed to load one or more images", err);
+//             }
+//         };
 
-        loadAllImages();
-    }, []);
+//         loadAllImages();
+//     }, []);
 
-    if (!images) {
-        return <p>Loading background…</p>;
-    }
+//     if (!images) {
+//         return <p>Loading background…</p>;
+//     }
 
-    return <BackgroundCanvas {...images} />;
-};
+//     return <BackgroundCanvas {...images} />;
+// };
 
-export const BackgroundCanvas = ({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray }) => {
-    const skyRef = useRef<HTMLCanvasElement>(null);
-    const starsRef = useRef<HTMLCanvasElement>(null);
-    const raysRef = useRef<HTMLCanvasElement>(null);
-    const cloudRef = useRef<HTMLCanvasElement>(null);
-    const nightProgress = useRef(0);
-    const rays = useRef([]);
+export const BackgroundCanvas = () => {
     const [night, setNight] = useState(false);
 
-    useEffect(() => {
-        const resize = () => {
-            [skyRef, starsRef, raysRef, cloudRef].forEach((ref) => {
-                if (ref.current) {
-                    ref.current.width = 1920;
-                    ref.current.height = 947;
-                }
-            });
-        };
-        resize();
-        // window.addEventListener("resize", resize);
-        // return () => window.removeEventListener("resize", resize);
-    }, []);
+    
 
-    const drawSky = () => {
-        const ctx = skyRef.current?.getContext("2d");
-        if (!ctx) return;
-        ctx.clearRect(0, 0, skyRef.current.width, skyRef.current.height);
-        ctx.drawImage(Sky, 0, 0, skyRef.current.width, skyRef.current.height);
-        ctx.drawImage(Shades, 0, 0, skyRef.current.width, skyRef.current.height);
-    }
-
-    const drawStars = () => {
-        const ctx = starsRef.current.getContext("2d");
-        ctx.clearRect(0, 0, starsRef.current.width, starsRef.current.height);
-        ctx.drawImage(Stars, 0, 0, starsRef.current.width, starsRef.current.height);
-        ctx.globalAlpha = 1;
-        // if (frame < maxFrames) {
-        //     frame++;
-        //     requestAnimationFrame(drawStars);
-        // }
-    }
-
-    const drawRays = () => {
-        const ctx = raysRef.current.getContext("2d");
-        rays.current = [
-            new RayAnimate(Ray, -800, ctx),
-            new RayAnimate(Ray, -400, ctx),
-            new RayAnimate(Ray, 0, ctx),
-            new RayAnimate(Ray, 400, ctx),
-            new RayAnimate(Ray, 800, ctx),
-        ];
-
-        // const animateRays = () => {
-        //     ctx.clearRect(0, 0, raysRef.current.width, raysRef.current.height);
-        //     // ctx.filter = `hue-rotate(${lerp(0, -66, nightProgress.current)}deg) brightness(${lerp(1, 0.9, nightProgress.current)})`;
-        //     rays.current.forEach(ray => ray.animate());
-        //     requestAnimationFrame(animateRays);
-        // };
-        // animateRays();
-    }
-
-    const drawClouds = () => {
-        const ctx = cloudRef.current.getContext("2d");
-        ctx.clearRect(0, 0, cloudRef.current.width, cloudRef.current.height);
-        //   ctx.filter = `hue-rotate(${lerp(0, -50, nightProgress.current)}deg)`;
-        ctx.drawImage(Sun, 0, 0, skyRef.current.width, skyRef.current.height);
-        ctx.drawImage(Cloud2, 0, 0, cloudRef.current.width, cloudRef.current.height);
-        ctx.drawImage(Cloud1, 0, 0, cloudRef.current.width, cloudRef.current.height);
-    }
-
-    useEffect(() => {
-        drawSky()
-        drawStars();
-        drawRays()
-        drawClouds()
-    }, []);
 
 
     useEffect(() => {
@@ -294,10 +223,12 @@ export const BackgroundCanvas = ({ Sky, Cloud1, Cloud2, Stars, Sun, Shades, Ray 
 
     return (
         <div style={{ zIndex: -1, position: "fixed" }}>
-            <canvas ref={skyRef} className={"bgCanvas sky " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 0 }} />
-            <canvas ref={starsRef} className={"bgCanvas stars " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
-            <canvas ref={raysRef} className={"bgCanvas rays " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }} />
-            <canvas ref={cloudRef} className={"bgCanvas clouds " + (night && "night")} style={{ position: 'absolute', top: 0, left: 0, zIndex: 3 }} />
+            <div className={"bgCanvas sky " + (night && "night")} style={{backgroundImage:"url("+sky+")"}}> </div>
+            <div className={"bgCanvas stars " + (night && "night")} style={{backgroundImage:"url("+stars+")"}}> </div>
+            <div className={"bgCanvas sun " + (night && "night")} style={{backgroundImage:"url("+sun+")"}}> </div>
+            <div className={"bgCanvas clouds " + (night && "night")} style={{backgroundImage:"url("+cloud2+")"}}> </div>
+            <div className={"bgCanvas clouds " + (night && "night")} style={{backgroundImage:"url("+cloud1+")"}}> </div>
+         
         </div>
     );
 };

@@ -7,13 +7,13 @@ import ErrorDialog from "./errorDialog/ErrorDialog";
 import Login from "./login/Login";
 import LogIntoRoom from "./login/LogIntoRoom";
 import PlayRoom from "./playroom/PlayRoom";
-import { BackgroundCanvas, BackgroundCanvasController } from "../backgroundController/backgroundCanvas";
+import { BackgroundCanvas } from "../backgroundController/backgroundCanvas";
 
 const Main = () => {
     const { state } = useContext(SocketContext)
     return (
         <div className="App">
-            <BackgroundCanvasController />
+            <BackgroundCanvas />
             <ErrorDialog />
             <Routes>
                 <Route path="/" element={<Login />} />
