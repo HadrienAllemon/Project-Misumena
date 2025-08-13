@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    filter: hue-rotate(0) saturate(1) brightness(1);
+    filter: hue-rotate(0) saturate(1) brightness(1) opacity(1);
     transition: filter 3s ease, opacity 3s ease;
     background-size: cover;
     background-position: center;
@@ -14,8 +14,12 @@
     filter: hue-rotate(-66deg) brightness(.75);
 } */
 
+.shades.night{
+    filter: hue-rotate(-87deg) saturate(1) brightness(.75) opacity(.9);
+}
+
 .sun.night{
-    filter: hue-rotate(-87deg) saturate(.9) brightness(.9);
+    filter: hue-rotate(-87deg) saturate(.9) brightness(.8);
 }
 
 .sky.night{

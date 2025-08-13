@@ -4,7 +4,7 @@ import { SocketContext } from "../../contexts/socket/SocketContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import sun from "../../img/sun.png";
-import { Button, Card, CardBody, Flex, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, Flex, FormControl, FormLabel, Input, Spacer } from "@chakra-ui/react";
 
 const Login = () => {
     const { socket, state, dispatch } = useContext(SocketContext);
@@ -18,18 +18,21 @@ const Login = () => {
         if (state.room?.id?.length) navigate(`/${state.room.id}`);
     }, [state.room])
     return (
-        <div style={{ height: "100vh", width: "100vw"}} >
+        <div style={{ height: "100vh", width: "100vw" }} >
             <Flex alignItems={"center"} justifyContent={"center"} height={"100%"}>
-                <Card color="white" bg={"#3332"}>
+                <Card color="white" bg={"#50185170"} outline={"1px solid #333a"}>
                     <CardBody>
                         <FormControl>
-                            <FormLabel>What should we call you ?</FormLabel>
-                            <Input color="black" value={playerName} onChange={(event) => setPlayerName(event.target.value)} id="standard-basic" variant="standard" />
-                            <FormLabel>join a specific room</FormLabel>
-                            <Input color="black" value={playerRoom} onChange={(event) => setPlayerRoom(event.target.value)} id="standard-basic" variant="standard" />
-                            <Button onClick={login} style={{ width: "60px" }} variant="contained">
-                                GO
-                            </Button>
+                            <Box >
+                                <FormLabel fontSize={"xl"}>What should we call you ?</FormLabel>
+                                <Input color="black" value={playerName} onChange={(event) => setPlayerName(event.target.value)} id="standard-basic" variant="standard" />
+                                <Spacer boxSize={"10"}/>
+                                <FormLabel fontSize={"xl"}>join a specific room</FormLabel>
+                                <Input color="black" value={playerRoom} onChange={(event) => setPlayerRoom(event.target.value)} id="standard-basic" variant="standard" />
+                                <Button onClick={login} style={{ width: "60px" }} variant="contained">
+                                    GO
+                                </Button>
+                            </Box>
                         </FormControl>
                     </CardBody>
                 </Card>

@@ -132,13 +132,13 @@
 // }
 
 import React, { useEffect, useRef, useState } from "react";
-import cloud1 from "./Cloud1.png";
-import cloud2 from "./Cloud2.png";
-import sky from "./sky.png";
-import stars from "./Stars.png";
-import sun from "./Sun2.png";
-import shades from "./shades.png";
-import ray from "./Ray.png";
+import cloud1 from "../../assets/bgImg/Cloud1.png";
+import cloud2 from "../../assets/bgImg/Cloud2.png";
+import sky from "../../assets/bgImg/sky.png";
+import stars from "../../assets/bgImg/Stars.png";
+import sun from "../../assets/bgImg/Sun2.png";
+import shades from "../../assets/bgImg/shades.png";
+import ray from "../../assets/bgImg/Ray.png";
 import "./backgroundCanvas.css";
 
 // class RayAnimate {
@@ -223,12 +223,13 @@ export const BackgroundCanvas = () => {
 
     return (
         <div style={{ zIndex: -1, position: "fixed" }}>
+
             <div className={"bgCanvas sky " + (night && "night")} style={{backgroundImage:"url("+sky+")"}}> </div>
             <div className={"bgCanvas stars " + (night && "night")} style={{backgroundImage:"url("+stars+")"}}> </div>
+            <div className={"bgCanvas shades " + (night && "night")} style={{backgroundImage:"url("+shades+")"}}> </div>
             <div className={"bgCanvas sun " + (night && "night")} style={{backgroundImage:"url("+sun+")"}}> </div>
             <div className={"bgCanvas clouds " + (night && "night")} style={{backgroundImage:"url("+cloud2+")"}}> </div>
             <div className={"bgCanvas clouds " + (night && "night")} style={{backgroundImage:"url("+cloud1+")"}}> </div>
-         
         </div>
     );
 };
