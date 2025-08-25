@@ -9,7 +9,8 @@ export default defineConfig({
     alias: {
       "src": path.resolve(__dirname, "./src"),
       "models": path.resolve(__dirname, "./src/models"),
-      "shared": path.resolve(__dirname, "../shared")
+      "shared": path.resolve(__dirname, "../shared"),
+      "assets": path.resolve(__dirname, "./assets")
     },
   },
   build: {

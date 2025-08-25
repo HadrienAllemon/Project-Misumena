@@ -35,6 +35,9 @@
       ],
       "shared/*": [
         "../shared/*"
+      ],
+      "assets/*":[
+        "./assets/*"
       ]
     },
     "jsx": "react-jsx"

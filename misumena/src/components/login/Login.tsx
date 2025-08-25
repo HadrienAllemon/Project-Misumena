@@ -3,8 +3,8 @@ import { useContext, useState } from "react";
 import { SocketContext } from "../../contexts/socket/SocketContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import sun from "../../img/sun.png";
-import { Box, Button, Card, CardBody, Flex, FormControl, FormLabel, Input, Spacer } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, Flex, FormControl, FormLabel, Img, Input, Spacer } from "@chakra-ui/react";
+import misumenaImg2 from "assets/title/Misumena_Title.png"
 
 const Login = () => {
     const { socket, state, dispatch } = useContext(SocketContext);
@@ -19,7 +19,9 @@ const Login = () => {
     }, [state.room])
     return (
         <div style={{ height: "100vh", width: "100vw" }} >
-            <Flex alignItems={"center"} justifyContent={"center"} height={"100%"}>
+            <Flex alignItems={"center"} justifyContent={"flexStart"} height={"100%"} direction={"column"} gap={"4rem"} paddingTop={"7rem"}>
+            <Img src={misumenaImg2} height={"12rem"} className="titleImg" />
+
                 <Card color="white" bg={"#50185170"} outline={"1px solid #333a"}>
                     <CardBody>
                         <FormControl>
