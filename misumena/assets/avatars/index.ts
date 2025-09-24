@@ -1,0 +1,1 @@
+export const avatars = import.meta.glob('./*.png', { eager: true, import: 'default' });

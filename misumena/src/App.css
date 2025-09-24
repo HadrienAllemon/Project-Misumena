@@ -13,6 +13,17 @@
   }
 }
 
+.mainSquare{
+  background:#2d2c4d66;
+  min-width: 1000px;
+  height:100%;
+  width: 70%;
+  box-shadow: inset 0px 2px 0px 0px rgba(255,255,255,.15),0px 3px 0px 0px rgba(255,255,255,.15);
+  border: 4px rgba(29,29,27,.15) solid;
+  border-radius: 12px;
+  margin:0 auto
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { SocketContext } from "../../contexts/socket/SocketContext";
 import { useParams } from "react-router-dom";
 import { Button, FormControl, FormLabel, Img, Input } from "@chakra-ui/react";
-import misumenaImg from "assets/title/Misumena_Title_PA_2.png"
+import misumenaImg from "assets/title/Misumena_Title.png"
 const LogIntoRoom = () => {
     const { socket, dispatch } = useContext(SocketContext);
     const [playerName, setPlayerName] = useState<string>("");
