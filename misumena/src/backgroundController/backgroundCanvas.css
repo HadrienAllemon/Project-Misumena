@@ -9,35 +9,56 @@
     background-size: cover;
     background-position: center;
 }
+
+.BGHandler {
+    background: linear-gradient(#052e5e, #0e497e);
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+
 /* 
 .bgCanvas.night{
     filter: hue-rotate(-66deg) brightness(.75);
 } */
 
-.shades.night{
+.shades.night {
     filter: hue-rotate(-87deg) saturate(1) brightness(.75) opacity(.9);
 }
 
-.sun.night{
+.sun.night {
     filter: hue-rotate(-87deg) saturate(.9) brightness(.8);
 }
 
-.sky.night{
+.sky.night {
     filter: hue-rotate(-87deg) saturate(.9) brightness(.85);
+    opacity: 1;
 }
 
-.clouds.night{
+.clouds.night {
     filter: hue-rotate(-50deg) saturate(1) brightness(.85);
 }
 
-.stars{
+.stars {
     opacity: 0;
 }
 
-.stars.night{
+.stars.night {
     opacity: .7;
 }
+.playRoomBg .stars.night {
+    opacity: .4;
+}
 
-.rays.night{
+.rays.night {
     filter: hue-rotate(-66deg) saturate(0) brightness(0) opacity(0);
+}
+
+
+.playRoomBg .sun,
+.playRoomBg .clouds,
+.playRoomBg .rays,
+.playRoomBg .sky {
+    opacity: 0;
 }

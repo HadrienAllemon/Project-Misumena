@@ -140,6 +140,7 @@ import sun from "../../assets/bgImg/Sun2.png";
 import shades from "../../assets/bgImg/shades.png";
 import ray from "../../assets/bgImg/Ray.png";
 import "./backgroundCanvas.css";
+import { useLocation } from "react-router-dom";
 
 // class RayAnimate {
 //     offset = 0;
@@ -213,7 +214,8 @@ import "./backgroundCanvas.css";
 export const BackgroundCanvas = () => {
     const [night, setNight] = useState(false);
 
-    
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
 
 
 
@@ -222,7 +224,7 @@ export const BackgroundCanvas = () => {
     }, []);
 
     return (
-        <div style={{ zIndex: -1, position: "fixed" }}>
+        <div style={{ zIndex: -1, position: "fixed" }} className={ `BGHandler ${!isHomePage ? "playRoomBg" : ""}`}>
 
             <div className={"bgCanvas sky " + (night && "night")} style={{backgroundImage:"url("+sky+")"}}> </div>
             <div className={"bgCanvas stars " + (night && "night")} style={{backgroundImage:"url("+stars+")"}}> </div>
