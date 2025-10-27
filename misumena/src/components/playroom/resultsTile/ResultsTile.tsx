@@ -4,14 +4,14 @@ import { SocketContext } from "src/contexts/socket/SocketContext";
 const ResultsTile = () => {
     const { state, dispatch } = useContext(SocketContext)
 
-    if (state?.room?.roomState !== "results") return null;
+    if (state?.room?.roomState !== "results" || !state.room.results) return null;
     const {
         users_accusations,
         intruder,
         intruderWord,
         othersWord,
         scoreModification
-    } = state?.room?.results;
+    } = state.room.results!;
 
     const getAccusation = () => {
         return Object.keys(users_accusations).map(userId => {

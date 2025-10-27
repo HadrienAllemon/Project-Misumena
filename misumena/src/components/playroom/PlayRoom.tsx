@@ -6,7 +6,8 @@ import PlayerTile from "./playerTile/PlayerTile";
 import ResultsTile from "./resultsTile/ResultsTile";
 import ScoreBoard from "./scoreBoard/scoreBoard";
 import VoteTile from "./voteTile/VoteTile";
-import { Button, Flex, Input } from "@chakra-ui/react";
+import { Box, Button, Flex, Input } from "@chakra-ui/react";
+import { PlayerSubmit } from "./playerTile/PlayerSubmit";
 
 const PlayRoom = () => {
     const { state, dispatch } = useContext(SocketContext);
@@ -22,22 +23,23 @@ const PlayRoom = () => {
         dispatch({ type: "startGame" });
     }
 
+    const bgColors = import.meta.env.VITE_BG_COLORS?.split(",");
+
     return (
-        <div>
-            <Flex>
-                {state.usersInRoom.map((user) =>
-                    <PlayerTile isAdmin={user.id === state?.room?.userAdmin?.id} user={user} len={12 / state.usersInRoom.length} />
+        <Flex flexDir={"column"} justifyContent={"space-between"} height="100%">
+            <Flex justifyContent={"center"} gap={"1.5rem"} flexWrap={"wrap"} flexGrow={1} maxH="50vh" padding={"0 2rem"}>
+                {state.usersInRoom.map((user, i) =>
+                    <PlayerTile isAdmin={user.id === state?.room?.userAdmin?.id} user={user} bg={bgColors[i]} score={user.score} />
                 )}
             </Flex>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-                <Input value={word} variant="outlined" onChange={(ev) => setWord(ev.currentTarget.value)}></Input>
-                <Button onClick={submitWord} disabled={!state.currentUser.isHisTurn || state.room.roomState !== "ongoing"}>GO</Button>
-                <Button onClick={startGame} disabled={!isAdmin}>Start Game</Button>
-            </div>
-            <VoteTile />
-            <ResultsTile />
-            <ScoreBoard />
-        </div>
+            <Box>
+                <ResultsTile />
+            </Box>
+            {/* <VoteTile /> */}
+            <Box>
+                <PlayerSubmit />
+            </Box>
+        </Flex>
     )
 }
 
