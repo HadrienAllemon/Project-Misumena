@@ -7,6 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: SuperSunday; /* set name */
+  src: url("../assets/fonts/SuperSunday-vn3MA.ttf"); /* url of the font */
+}
+
+.Sunday{
+  font-family: 'SuperSunday', cursive;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

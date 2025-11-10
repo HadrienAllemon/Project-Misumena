@@ -3,6 +3,7 @@ import { IUser } from "models/IUser";
 import React, { useContext } from "react";
 import { SocketContext } from "src/contexts/socket/SocketContext";
 import avatarPlaceholder from "assets/avatars/avatar0.png";
+import aquaBG from "assets/playerTile/aquaBG.jpg"
 
 interface IPlayerTileProps {
     user: IUser;
@@ -25,7 +26,8 @@ const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, bg }) => {
         );
     }
     return (
-        <Box flexGrow={1} maxW={"30rem"} height={"100%"} padding={"2rem"} background={bg} borderRadius="10px" marginTop="3rem">
+        <Box flexGrow={1} maxW={"30rem"} height={"100%"} padding={"2rem"} pos={"relative"} overflow={"hidden"} borderRadius="10px" marginTop="3rem" boxShadow={"inset 0 0 62px rgba(0, 2, 115, 0.77)"}>
+            <Box className="BGHandler" background={`url(${aquaBG})`} backgroundSize={"cover"} height={"100%"} width={"100%"} position={"absolute"} top={0} left={0} zIndex={-1} hueRotate={"0deg"} filter={"hue-rotate(0deg) saturate(0.7) blur(1.5px)"}/>
             {/* <GridItem style={{ border: "1px solid black" }} width={"100%"} borderRadius={"10px"} > */}
             <Flex justifyContent={"space-between"} alignItems="center" marginBottom="1rem">
                 <Img src={avatarPlaceholder} alt="User Avatar" boxSize="100px" borderRadius="full" marginRight="1rem" />
@@ -33,7 +35,7 @@ const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, bg }) => {
                     <Box height="20px" >
                         {isAdmin && <Box style={{ color: "crimson", fontWeight: "bold" }}>ADMIN</Box>}
                     </Box>
-                    <Box style={{ fontWeight: isCurrentUser ? "bold" : "inherit" }} >{user.name}</Box>
+                    <Box style={{ fontWeight: isCurrentUser ? "bold" : "inherit" }} className="Sunday" >{user.name}</Box>
                     <Box>Score : {user.score || 0}</Box>
                 </Box>
             </Flex>
