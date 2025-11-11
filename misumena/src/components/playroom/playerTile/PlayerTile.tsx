@@ -3,16 +3,16 @@ import { IUser } from "models/IUser";
 import React, { useContext } from "react";
 import { SocketContext } from "src/contexts/socket/SocketContext";
 import avatarPlaceholder from "assets/avatars/avatar0.png";
-import aquaBG from "assets/playerTile/aquaBG.jpg"
+import aquaBG from "assets/playerTile/gradientPlayerTile.png"
 
 interface IPlayerTileProps {
     user: IUser;
     isAdmin: boolean;
-    bg?: string;
     score?: number;
+    index?:number
 }
 
-const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, bg }) => {
+const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, index=0}) => {
     const { state } = useContext(SocketContext);
     const isCurrentUser = state.currentUser?.id === user.id
     const renderCurrentWord = () => {
@@ -26,8 +26,8 @@ const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, bg }) => {
         );
     }
     return (
-        <Box flexGrow={1} maxW={"30rem"} height={"100%"} padding={"2rem"} pos={"relative"} overflow={"hidden"} borderRadius="10px" marginTop="3rem" boxShadow={"inset 0 0 62px rgba(0, 2, 115, 0.77)"}>
-            <Box className="BGHandler" background={`url(${aquaBG})`} backgroundSize={"cover"} height={"100%"} width={"100%"} position={"absolute"} top={0} left={0} zIndex={-1} hueRotate={"0deg"} filter={"hue-rotate(0deg) saturate(0.7) blur(1.5px)"}/>
+        <Box flexGrow={1} maxW={"30rem"} height={"100%"} padding={"2rem"} pos={"relative"} overflow={"hidden"} borderRadius="10px" marginTop="3rem" boxShadow={"0 0 100px rgba(0,0,0,0.6) inset , 10px 2px 30px rgba(0,0,0,0.5)"} border={"2px solid rgba(33,33,99, .9)"} >
+            <Box className="BGHandler" background={`url(${aquaBG})`} backgroundSize={"cover"} height={"100%"} width={"100%"} position={"absolute"} top={0} left={0} zIndex={-1} hueRotate={"0deg"} filter={`hue-rotate(${index*137.5}deg)`}/>
             {/* <GridItem style={{ border: "1px solid black" }} width={"100%"} borderRadius={"10px"} > */}
             <Flex justifyContent={"space-between"} alignItems="center" marginBottom="1rem">
                 <Img src={avatarPlaceholder} alt="User Avatar" boxSize="100px" borderRadius="full" marginRight="1rem" />

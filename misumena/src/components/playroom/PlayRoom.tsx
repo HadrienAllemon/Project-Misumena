@@ -29,7 +29,7 @@ const PlayRoom = () => {
         <Flex flexDir={"column"} justifyContent={"space-between"} height="100%">
             <Flex justifyContent={"center"} gap={"1.5rem"} flexWrap={"wrap"} flexGrow={1} maxH="50vh" padding={"0 2rem"}>
                 {state.usersInRoom.map((user, i) =>
-                    <PlayerTile isAdmin={user.id === state?.room?.userAdmin?.id} user={user} bg={bgColors[i]} score={user.score} />
+                    <PlayerTile isAdmin={user.id === state?.room?.userAdmin?.id} user={user} index={i} score={user.score} />
                 )}
             </Flex>
             <Box>
