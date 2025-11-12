@@ -35,7 +35,7 @@ const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, index=0}) => {
                     <Box height="20px" >
                         {isAdmin && <Box style={{ color: "crimson", fontWeight: "bold" }}>ADMIN</Box>}
                     </Box>
-                    <Box style={{ fontWeight: isCurrentUser ? "bold" : "inherit" }} className="Sunday" >{user.name}</Box>
+                    <Box style={{ fontWeight: isCurrentUser ? "bold" : "inherit" }} className="Sunday" fontSize={"50px"} color="white" textShadow={"-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000"}>{user.name}</Box>
                     <Box>Score : {user.score || 0}</Box>
                 </Box>
             </Flex>

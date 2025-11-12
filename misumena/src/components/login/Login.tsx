@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Button, Card, CardBody, Flex, FormControl, FormLabel, Img, Input, Spacer } from "@chakra-ui/react";
 import misumenaImg2 from "assets/title/Misumena_Title.png"
 import { Carousel } from "./avatarCarousel";
+import gradientBackground from "assets/playerTile/gradientPlayerTilePlain.png"
 
 const Login = () => {
     const { socket, state, dispatch } = useContext(SocketContext);
@@ -24,7 +25,7 @@ const Login = () => {
                 <Flex alignItems={"center"} justifyContent={"flexStart"} height={"100%"} direction={"column"} gap={"4rem"} paddingTop={"7rem"}>
                     <Img src={misumenaImg2} height={"12rem"} className="titleImg" />
 
-                    <Card color="white" bg={"#50185170"} outline={"1px solid #333a"}>
+                    <Card color="white" bg={`url(${gradientBackground})`} backgroundSize={"cover"} outline={"1px solid #333a"} boxShadow={"0 0 10px #21769f inset , 0px -2px 30px rgba(100,100,200,0.5)"}>
                         <CardBody>
                             <Flex alignItems={"center"} justifyContent={"flexStart"} height={"100%"} gap={"4rem"}>
                                 <Box width={"200px"}>
@@ -37,7 +38,7 @@ const Login = () => {
                                         <Spacer boxSize={"10"} />
                                         <FormLabel fontSize={"xl"}>join a specific room</FormLabel>
                                         <Input color="black" value={playerRoom} onChange={(event) => setPlayerRoom(event.target.value)} id="standard-basic" variant="standard" />
-                                        <Button onClick={login} style={{ width: "60px" }} variant="contained">
+                                        <Button onClick={login} style={{ width: "60px" }} variant="contained" background={"crimson"}>
                                             GO
                                         </Button>
                                     </Box>
