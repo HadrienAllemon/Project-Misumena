@@ -36,7 +36,7 @@ export const Carousel = () => {
   console.log(cards);
 
   return (
-    <Box position={'relative'} height={'200px'} width={'200px'} overflow={'hidden'}>
+    <Box position={'relative'} height={'200px'} width={'200px'} overflow={'hidden'} >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -75,7 +75,7 @@ export const Carousel = () => {
         <BiRightArrowAlt />
       </IconButton>
       {/* Slider */}
-      <Slider {...settings} speed={60} autoplay={false} ref={(slider) => setSlider(slider)}>
+      <Slider {...settings} speed={60}  autoplay={false} ref={(slider) => setSlider(slider)}>
         {cards.map((url, index) => (
           <Box
             key={index}
@@ -85,6 +85,8 @@ export const Carousel = () => {
             backgroundRepeat="no-repeat"
             backgroundSize="contain"
             backgroundImage={`url(${url})`}
+            border={"4px solid aqua"}
+            borderRadius={"50%"}
           />
         ))}
       </Slider>

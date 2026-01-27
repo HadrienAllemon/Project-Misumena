@@ -20,7 +20,7 @@ const Main = () => {
                 <Route path="/:room" element={
                     state.room ?
                         <PlayRoom /> :
-                        <LogIntoRoom />
+                        <Login />
                 } />
             </Routes>
         </div>
