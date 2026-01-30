@@ -1,0 +1,200 @@
+.player-card {
+    border-radius: 10px;
+    border: 2px solid rgba(33, 33, 99, 0.9);
+    box-shadow:
+        0 0 100px rgba(0, 0, 0, 0.6) inset,
+        0 0 3px rgb(255, 255, 255, 0.6) inset,
+        10px 2px 30px rgba(0, 0, 0, 0.5);
+    flex-grow: 1;
+    max-width: 30rem;
+    height: 100%;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.player-card-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("../../../../assets/playerTile/gradientPlayerTile.png");
+    background-size: cover;
+}
+
+.player-card-header {
+    position: relative;
+}
+
+.player-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.player-info {
+    height: 130px;
+    display: flex;
+    max-width: 200px;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.player-name {
+    font-size: 50px;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    font-size: clamp(1.5rem, 50px, 10rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-name--current {
+    font-weight: bold;
+}
+
+.admin-badge {
+    height: 27px;
+    padding: 0 0.75rem;
+    width: fit-content;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.admin-text {
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.player-score {
+    margin-top: 0.25rem;
+}
+
+
+.admin-text {
+    font-weight: 900;
+    background: linear-gradient(135deg, #FFD700 5%, #FFED4E 25%, #C5A028 60%, #FFD700 85%, #FFED4E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.admin-text::before {
+    content: "👑";
+    line-height: 5px;
+    position: relative;
+    top: -2px;
+}
+
+.word-box {
+    background: linear-gradient(90deg, transparent 0%, #ffffff55 50%, transparent 100%);
+    padding: 8px 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.word-box .secret-word {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.word-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, #ffffff88 50%, transparent 100%);
+}
+
+.word-box::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent 0%, #ffffff88 50%, transparent 100%);
+}
+
+.guesses-box {
+    background: #2e2e2e30;
+    padding: 8px 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: inset -1px -2px 0px rgba(255, 255, 255, .15), inset 0px 0px 1px rgba(255, 255, 255, .3);
+}
+
+.guesses-header {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: flex;
+    color: white;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.guesses-header .left-line,
+.guesses-header .right-line {
+    height: 2px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.left-line {
+    background: linear-gradient(90deg, transparent 0%, #ffffff88 100%);
+    margin-right: 8px;
+}
+
+.right-line {
+    background: linear-gradient(90deg, #ffffff88 0%, transparent 100%);
+    margin-left: 8px;
+}
+
+.guesses-list {
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    /* background : radial-gradient(circle, #d1d1d149 0%, #97979711 80%, #75757505 100%); */
+    background: linear-gradient(90deg, #75757515 0%, #d1d1d122 10%, #d1d1d130 50%, #d1d1d122 90%, #75757515 100%);
+    text-align: left;
+
+}
+
+.guesses-list-item {
+    font-size: 18px;
+    margin: 4px 0;
+    padding: 2px 8px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.guesses-list-item::before {
+    content: "● ";
+    font-size: 20px;
+    color: rgb(41, 41, 41);
+}
+
+.guesses-list-item:nth-child(odd) {
+    background: #ffffff10;
+}
