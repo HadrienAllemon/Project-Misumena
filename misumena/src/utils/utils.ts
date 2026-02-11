@@ -8,3 +8,15 @@ export function easeInOutCubic(t: number) {
         ? 4 * t * t * t
         : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
+
+export function getFontSizeForName(
+    name: string,
+    maxChars: number,
+    baseSize = 50,
+    minSize = 24
+  ) {
+    if (name.length <= maxChars) return baseSize;
+  
+    const ratio = maxChars / name.length;
+    return Math.max(minSize, Math.floor(baseSize * ratio));
+  }

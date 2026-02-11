@@ -4,6 +4,7 @@ import React, { useCallback, useContext, useMemo } from "react";
 import { SocketContext } from "src/contexts/socket/SocketContext";
 import avatarPlaceholder from "assets/avatars/avatar0.png";
 import aquaBG from "assets/playerTile/gradientPlayerTile.png"
+import { getFontSizeForName } from "src/utils/utils";
 import "./playerTile.css";
 interface IPlayerTileProps {
     user: IUser;
@@ -81,6 +82,7 @@ const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, index = 0 }) =>
           className={`player-name Sunday ${
             isCurrentUser ? "player-name--current" : ""
           }`}
+          fontSize={getFontSizeForName(user.name, 10)}
         >
           {user.name}
         </Box>
