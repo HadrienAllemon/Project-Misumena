@@ -59,6 +59,7 @@ const PlayerTile: React.FC<IPlayerTileProps> = ({ user, isAdmin, index = 0 }) =>
     <Box
       className="player-card-bg"
       style={{ filter: `hue-rotate(${index * 137.5}deg)` }}
+      backgroundImage={aquaBG}
     />
 
     <Flex

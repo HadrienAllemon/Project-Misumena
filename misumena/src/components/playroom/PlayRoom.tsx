@@ -7,23 +7,10 @@ import ResultsTile from "./resultsTile/ResultsTile";
 import ScoreBoard from "./scoreBoard/scoreBoard";
 import VoteTile from "./voteTile/VoteTile";
 import { Box, Button, Flex, Input } from "@chakra-ui/react";
-import { PlayerSubmit } from "./playerTile/PlayerSubmit";
+import { PlayerSubmit } from "./submitTile/PlayerSubmit";
 
 const PlayRoom = () => {
     const { state, dispatch } = useContext(SocketContext);
-    const [word, setWord] = useState<string>("");
-    const isAdmin = state?.currentUser?.id === state?.room?.userAdmin?.id
-
-    const submitWord = () => {
-        dispatch({ type: "submitWord", word: word });
-        setWord("");
-    }
-
-    const startGame = () => {
-        dispatch({ type: "startGame" });
-    }
-
-    const bgColors = import.meta.env.VITE_BG_COLORS?.split(",");
 
     return (
         <Flex flexDir={"column"} justifyContent={"space-between"} height="100%">

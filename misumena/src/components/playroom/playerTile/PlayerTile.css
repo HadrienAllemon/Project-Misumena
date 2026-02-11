@@ -19,7 +19,7 @@
     inset: 0;
     z-index: -1;
 
-    background-image: url("../../../../assets/playerTile/gradientPlayerTile.png");
+    /* background-image: url("../../../../assets/playerTile/gradientPlayerTile.png"); */
     background-size: cover;
 }
 
@@ -141,6 +141,7 @@
     width: 100%;
     position: relative;
     border-radius: 10px;
+    min-height: 5rem;
     box-shadow: inset -1px -2px 0px rgba(255, 255, 255, .15), inset 0px 0px 1px rgba(255, 255, 255, .3);
 }
 

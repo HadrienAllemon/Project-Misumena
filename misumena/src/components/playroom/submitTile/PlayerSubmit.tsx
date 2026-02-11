@@ -1,7 +1,8 @@
 import { Flex, Input, Button, Box, Checkbox } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { SocketContext } from "src/contexts/socket/SocketContext";
-import VoteTile from "../voteTile/VoteTile";
+import "./PlayerSubmit.css";
+import { RoomState } from "./RoomState";
 
 export const PlayerSubmit = () => {
     const [word, setWord] = useState<string>("");
@@ -34,17 +35,15 @@ export const PlayerSubmit = () => {
 
     return (
         <Flex flexDir={"column"} alignItems={"center"} gap={"2rem"} justifyContent={"space-around"} paddingBottom="2rem">
-            <Box>
-                {disabled ? <div>Waiting for other players...</div> : <div>Your turn to submit a word!</div>}
-            </Box>
+            <RoomState disabled={disabled} />
             <Flex gap={"1rem"}>
                 <Input value={word} variant="outlined" isDisabled={disabled} onChange={(ev) => setWord(ev.currentTarget.value)} maxW={"20rem"}></Input>
                 <Button onClick={submitWord} isDisabled={disabled}>Submit</Button>
             </Flex>
             {state.room?.roomState !== "voting" &&
                 <Flex gap={"1rem"}>
-                    <Button onClick={startGame} isDisabled={!isAdmin}>Start Game</Button>
-                    <Button disabled={hasVoted} onClick={onVoteClick}>{voting ? "Confirm" : "Call a vote !"}</Button>
+                    <Button className="button-29" onClick={startGame} isDisabled={!isAdmin}>Start Game</Button>
+                    <Button className="button-29 button-30" disabled={hasVoted} onClick={onVoteClick}>{voting ? "Confirm" : "Call a vote !"}</Button>
                 </Flex>
             }
             {
