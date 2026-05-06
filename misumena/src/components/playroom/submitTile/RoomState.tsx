@@ -22,7 +22,7 @@ export const RoomState = ({ disabled } : {disabled: boolean}) => {
         )
     }
 
-    if (currentPlayer !== state.currentUser) {
+    if (currentPlayer.id !== state.currentUser.id) {
         return (
             <Box className="roomState">
                 <Text>
